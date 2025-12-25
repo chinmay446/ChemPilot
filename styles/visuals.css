@@ -1,0 +1,176 @@
+/* Extreme visuals and animations for ChemPilot
+   - Fullscreen canvas overlay for particles
+   - Animated neon gradient layers
+   - Toggle control styles
+*/
+
+:root{
+  --visual-toggle-size:48px;
+  --visual-primary: #3a86ff;
+  --visual-secondary: #ff006e;
+  --visual-accent: #8338ec;
+}
+
+/* Canvas overlay sits on top but behind UI elements which have z-index >=2 */
+#visuals-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1000;
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+/* Animated extreme gradient (background layer) */
+.extreme-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(58,134,255,0.08), rgba(131,56,236,0.06), rgba(255,0,110,0.05));
+  background-size: 400% 400%;
+  animation: extremeGradient 18s ease-in-out infinite;
+  filter: contrast(1.05) saturate(1.2) blur(20px);
+}
+
+@keyframes extremeGradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Noise/film grain overlay for intensity */
+.visuals-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="f"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23f)" opacity="0.02"/></svg>');
+  mix-blend-mode: overlay;
+}
+
+/* Icon appearance animation (used site-wide) */
+.icon-appear {
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  transition: opacity 700ms cubic-bezier(.2,.9,.2,1), transform 700ms cubic-bezier(.2,.9,.2,1);
+}
+
+.icon-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.feature-card, .stat-card {
+  transform-origin: center;
+  transition: transform 700ms ease, box-shadow 300ms ease;
+}
+
+.feature-card.appeared, .stat-card.appeared {
+  transform: translateY(0) scale(1);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .extreme-gradient, #visuals-canvas, .visuals-noise { display: none !important; }
+  .visuals-toggle { display: none !important; }
+}
+
+/* Background video wrapper */
+.bg-video-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* behind all content (header z-index: 10, modals z-index > 1000) */
+  pointer-events: none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  /* Fallback gradient if video fails to load */
+  background: linear-gradient(135deg, 
+    rgba(58, 134, 255, 0.4) 0%, 
+    rgba(131, 56, 236, 0.3) 35%, 
+    rgba(255, 0, 110, 0.25) 70%, 
+    rgba(4, 6, 14, 0.5) 100%);
+  animation: bgGradient 15s ease infinite;
+}
+
+@keyframes bgGradient {
+  0%, 100% {
+    background: linear-gradient(135deg, 
+      rgba(58, 134, 255, 0.4) 0%, 
+      rgba(131, 56, 236, 0.3) 35%, 
+      rgba(255, 0, 110, 0.25) 70%, 
+      rgba(4, 6, 14, 0.5) 100%);
+  }
+  50% {
+    background: linear-gradient(225deg, 
+      rgba(58, 134, 255, 0.35) 0%, 
+      rgba(131, 56, 236, 0.35) 35%, 
+      rgba(255, 0, 110, 0.3) 70%, 
+      rgba(4, 6, 14, 0.55) 100%);
+  }
+}
+
+.bg-video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.4) contrast(1.1) saturate(1.05);
+}
+
+/* Ensure body is positioned relative so z-index context works */
+body.video-bg {
+  position: relative;
+}
+
+/* Darken overlay to improve text contrast over video */
+body.video-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1; /* between video (0) and content (2+) */
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Theme adjustments when background video is enabled */
+.video-bg {
+  --primary-color: #7bdff6;
+  --secondary-color: #b68cff;
+  --accent-color: #ff7ab6;
+  --dark-bg: rgba(4,6,14,0.6);
+  --darker-bg: rgba(2,3,8,0.6);
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  color: #eaf6ff;
+}
+
+.video-bg .header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.video-bg .footer {
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
+}
+
+.video-bg .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.video-bg .btn-outline {
+  border-color: rgba(255,255,255,0.12);
+  color: rgba(230,245,255,0.95);
+}
+
+@media (max-width: 768px) {
+  .bg-video-wrapper iframe { min-width: 300vw; min-height: 160vw; }
+}
