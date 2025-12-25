@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ChemPilot</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/visuals.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page video-bg">
+    <div id="loading-screen">
+        <video id="loading-video" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="../assets/videos/logo.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3);"></div>
+        <div class="loading-text">ChemPilot AI Assistant</div>
+        <div class="loading-text" style="font-size: 14px; font-weight: 300; margin-top: 10px;">Loading your chemistry assistant...</div>
+        <div class="loading-spinner"></div>
+    </div>
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('fade-out');
+                }
+            }, 500);
+        });
+    </script>
+    <div class="bg-video-wrapper" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+            <source src="../assets/videos/background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <video src="../assets/images/logo.mp4" alt="ChemPilot Logo" class="logo" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+                <span class="brand-name">ChemPilot Admin</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h3 class="nav-section-title">Main</h3>
+                <ul>
+                    <li>
+                        <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#api-management" class="nav-link" data-section="api-management">
+                            <i class="fas fa-key"></i>
+                            <span>API Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <h3 class="nav-section-title">Content</h3>
+                <ul>
+                    <li>
+                        <a href="#reaction-management" class="nav-link" data-section="reaction-management">
+                            <i class="fas fa-flask"></i>
+                            <span>Reaction Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#users" class="nav-link" data-section="users">
+                            <i class="fas fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <h3 class="nav-section-title">System</h3>
+                <ul>
+                    <li>
+                        <a href="#analytics" class="nav-link" data-section="analytics">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings" class="nav-link" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="user-details">
+                    <span class="username" id="current-username">Admin</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+            <button class="btn btn-outline btn-small" id="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <h1 id="page-title">Dashboard</h1>
+            </div>
+            <div class="top-bar-right">
+                <div class="notifications">
+                    <button class="icon-btn" id="notifications-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn btn-primary btn-small" id="quick-settings">
+                        <i class="fas fa-cog"></i>
+                        Quick Settings
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="dashboard-header">
+                    <h2>Welcome to ChemPilot Admin</h2>
+                    <p>Manage your chemistry AI platform efficiently</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-reactions">1,250</h3>
+                            <p>Total Reactions</p>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            12%
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-molecules">8,500</h3>
+                            <p>Molecules in DB</p>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            8%
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-users">3,200</h3>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            5%
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="api-usage">96%</h3>
+                            <p>AI Prediction Accuracy</p>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            2%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions-grid">
+                    <div class="action-card" data-action="api-management">
+                        <div class="action-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3>API Settings</h3>
+                        <p>Configure AI API providers and keys</p>
+                        <button class="btn btn-outline btn-small">Configure</button>
+                    </div>
+
+                    <div class="action-card" data-action="reaction-data">
+                        <div class="action-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Manage Data</h3>
+                        <p>Upload and manage reaction data</p>
+                        <button class="btn btn-outline btn-small">Manage</button>
+                    </div>
+
+                    <div class="action-card" data-action="molecule-models">
+                        <div class="action-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>3D Models</h3>
+                        <p>Upload molecular visualization files</p>
+                        <button class="btn btn-outline btn-small">Upload</button>
+                    </div>
+
+                    <div class="action-card" data-action="analytics">
+                        <div class="action-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics</h3>
+                        <p>View platform usage statistics</p>
+                        <button class="btn btn-outline btn-small">View</button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>New reaction data uploaded</p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>API configuration updated</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>New user registration</p>
+                                <span class="activity-time">3 hours ago</span>
+                            </div>
+                        </div>
+
+                        <!-- Claude API -->
+                        <div class="api-key-section" data-provider="claude">
+                            <h4>Anthropic Claude API Configuration</h4>
+                            <div class="input-group">
+                                <label for="claude-api-key">API Key</label>
+                                <div class="input-with-action">
+                                    <input type="password" id="claude-api-key"
+                                           placeholder="Enter your Claude API key">
+                                    <button type="button" class="btn-icon toggle-api-key">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="claude-model">Model</label>
+                                <select id="claude-model">
+                                    <option value="claude-3-opus">Claude 3 Opus</option>
+                                    <option value="claude-3-sonnet">Claude 3 Sonnet</option>
+                                    <option value="claude-3-haiku">Claude 3 Haiku</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" data-save-api="claude">
+                                <i class="fas fa-save"></i> Save Configuration
+                            </button>
+                        </div>
+
+                        <!-- Mistral API -->
+                        <div class="api-key-section" data-provider="mistral">
+                            <h4>Mistral AI API Configuration</h4>
+                            <div class="input-group">
+                                <label for="mistral-api-key">API Key</label>
+                                <div class="input-with-action">
+                                    <input type="password" id="mistral-api-key"
+                                           placeholder="Enter your Mistral API key">
+                                    <button type="button" class="btn-icon toggle-api-key">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="mistral-model">Model</label>
+                                <select id="mistral-model">
+                                    <option value="mistral-large">Mistral Large</option>
+                                    <option value="mistral-medium">Mistral Medium</option>
+                                    <option value="mistral-small">Mistral Small</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" data-save-api="mistral">
+                                <i class="fas fa-save"></i> Save Configuration
+                            </button>
+                        </div>
+
+                        <!-- Groq API -->
+                        <div class="api-key-section" data-provider="groq">
+                            <h4>Groq API Configuration</h4>
+                            <div class="input-group">
+                                <label for="groq-api-key">API Key</label>
+                                <div class="input-with-action">
+                                    <input type="password" id="groq-api-key"
+                                           placeholder="Enter your Groq API key">
+                                    <button type="button" class="btn-icon toggle-api-key">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="groq-model">Model</label>
+                                <select id="groq-model">
+                                    <option value="mixtral-8x7b">Mixtral 8x7B</option>
+                                    <option value="llama2-70b">Llama 2 70B</option>
+                                    <option value="gemma-7b">Gemma 7B</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" data-save-api="groq">
+                                <i class="fas fa-save"></i> Save Configuration
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Management Section -->
+            <section id="api-management" class="content-section">
+                <div class="section-header">
+                    <h2>AI API Management</h2>
+                    <p>Configure and manage AI providers for the platform</p>
+                </div>
+
+                <div class="api-configuration">
+                    <div class="config-card">
+                        <h3>Primary AI Provider</h3>
+                        <p>Select the main AI service for reaction predictions</p>
+                        
+                        <div class="api-options">
+                            <div class="api-option" data-provider="deepseek">
+                                <div class="api-logo">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>DeepSeek</h4>
+                                    <p>Advanced chemistry AI</p>
+                                    <div class="api-status">
+                                        <span class="status-badge connected">Connected</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="deepseek" checked>
+                                </div>
+                            </div>
+
+                            <div class="api-option" data-provider="chatgpt">
+                                <div class="api-logo">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>ChatGPT</h4>
+                                    <p>OpenAI's powerful model</p>
+                                    <div class="api-status">
+                                        <span class="status-badge disconnected">Not Configured</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="chatgpt">
+                                </div>
+                            </div>
+
+                            <div class="api-option" data-provider="gemini">
+                                <div class="api-logo">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>Google Gemini</h4>
+                                    <p>Google's latest AI model</p>
+                                    <div class="api-status">
+                                        <span class="status-badge disconnected">Not Configured</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="gemini">
+                                </div>
+                            </div>
+
+                            <div class="api-option" data-provider="claude">
+                                <div class="api-logo">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>Anthropic Claude</h4>
+                                    <p>Advanced AI by Anthropic</p>
+                                    <div class="api-status">
+                                        <span class="status-badge disconnected">Not Configured</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="claude">
+                                </div>
+                            </div>
+
+                            <div class="api-option" data-provider="mistral">
+                                <div class="api-logo">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>Mistral AI</h4>
+                                    <p>European AI alternative</p>
+                                    <div class="api-status">
+                                        <span class="status-badge disconnected">Not Configured</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="mistral">
+                                </div>
+                            </div>
+
+                            <div class="api-option" data-provider="groq">
+                                <div class="api-logo">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h4>Groq</h4>
+                                    <p>Ultra-fast AI inference</p>
+                                    <div class="api-status">
+                                        <span class="status-badge disconnected">Not Configured</span>
+                                    </div>
+                                </div>
+                                <div class="api-radio">
+                                    <input type="radio" name="primary-api" value="groq">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Key Configuration -->
+                    <div class="config-card">
+                        <h3>API Keys Configuration</h3>
+                        
+                        <div class="api-key-sections">
+                            <!-- DeepSeek API -->
+                            <div class="api-key-section active" data-provider="deepseek">
+                                <h4>DeepSeek API Configuration</h4>
+                                <div class="input-group">
+                                    <label for="deepseek-api-key">API Key</label>
+                                    <div class="input-with-action">
+                                        <input type="password" id="deepseek-api-key" 
+                                               placeholder="Enter your DeepSeek API key" 
+                                               value="[your deepseek api key here]">
+                                        <button type="button" class="btn-icon toggle-api-key">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="deepseek-endpoint">API Endpoint</label>
+                                    <input type="text" id="deepseek-endpoint" 
+                                           value="https://api.deepseek.com/v1" 
+                                           placeholder="API endpoint URL">
+                                </div>
+                                <button class="btn btn-primary" data-save-api="deepseek">
+                                    <i class="fas fa-save"></i> Save Configuration
+                                </button>
+                            </div>
+
+                            <!-- ChatGPT API -->
+                            <div class="api-key-section" data-provider="chatgpt">
+                                <h4>ChatGPT API Configuration</h4>
+                                <div class="input-group">
+                                    <label for="chatgpt-api-key">API Key</label>
+                                    <div class="input-with-action">
+                                        <input type="password" id="chatgpt-api-key" 
+                                               placeholder="Enter your OpenAI API key">
+                                        <button type="button" class="btn-icon toggle-api-key">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="chatgpt-model">Model</label>
+                                    <select id="chatgpt-model">
+                                        <option value="gpt-4">GPT-4</option>
+                                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" data-save-api="chatgpt">
+                                    <i class="fas fa-save"></i> Save Configuration
+                                </button>
+                            </div>
+
+                            <!-- Gemini API -->
+                            <div class="api-key-section" data-provider="gemini">
+                                <h4>Google Gemini API Configuration</h4>
+                                <div class="input-group">
+                                    <label for="gemini-api-key">API Key</label>
+                                    <div class="input-with-action">
+                                        <input type="password" id="gemini-api-key" 
+                                               placeholder="Enter your Gemini API key">
+                                        <button type="button" class="btn-icon toggle-api-key">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="gemini-model">Model</label>
+                                    <select id="gemini-model">
+                                        <option value="gemini-pro">Gemini Pro</option>
+                                        <option value="gemini-ultra">Gemini Ultra</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" data-save-api="gemini">
+                                    <i class="fas fa-save"></i> Save Configuration
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fallback Configuration -->
+                    <div class="config-card">
+                        <h3>Fallback API Configuration</h3>
+                        <p>Configure automatic fallback when primary API fails</p>
+
+                        <div class="fallback-settings">
+                            <div class="input-group">
+                                <label for="fallback-enabled">
+                                    <input type="checkbox" id="fallback-enabled" checked>
+                                    Enable automatic fallback
+                                </label>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="fallback-order">Fallback Priority Order</label>
+                                <div class="fallback-list" id="fallback-order">
+                                    <div class="fallback-item" data-provider="deepseek">
+                                        <span class="provider-name">DeepSeek</span>
+                                        <span class="priority-badge">1</span>
+                                    </div>
+                                    <div class="fallback-item" data-provider="chatgpt">
+                                        <span class="provider-name">ChatGPT</span>
+                                        <span class="priority-badge">2</span>
+                                    </div>
+                                    <div class="fallback-item" data-provider="gemini">
+                                        <span class="provider-name">Gemini</span>
+                                        <span class="priority-badge">3</span>
+                                    </div>
+                                    <div class="fallback-item" data-provider="claude">
+                                        <span class="provider-name">Claude</span>
+                                        <span class="priority-badge">4</span>
+                                    </div>
+                                    <div class="fallback-item" data-provider="mistral">
+                                        <span class="provider-name">Mistral</span>
+                                        <span class="priority-badge">5</span>
+                                    </div>
+                                    <div class="fallback-item" data-provider="groq">
+                                        <span class="provider-name">Groq</span>
+                                        <span class="priority-badge">6</span>
+                                    </div>
+                                </div>
+                                <small class="input-hint">Drag to reorder fallback priority</small>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="max-retries">Maximum Retry Attempts</label>
+                                <select id="max-retries">
+                                    <option value="1">1 attempt</option>
+                                    <option value="2" selected>2 attempts</option>
+                                    <option value="3">3 attempts</option>
+                                    <option value="5">5 attempts</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="retry-delay">Retry Delay (seconds)</label>
+                                <input type="number" id="retry-delay" value="2" min="1" max="10">
+                            </div>
+
+                            <button class="btn btn-primary" id="save-fallback-settings">
+                                <i class="fas fa-save"></i> Save Fallback Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- API Usage Stats -->
+                    <div class="config-card">
+                        <h3>API Usage Statistics</h3>
+                        <div class="usage-stats">
+                            <div class="usage-stat">
+                                <span class="stat-label">Requests Today</span>
+                                <span class="stat-value">1,247</span>
+                            </div>
+                            <div class="usage-stat">
+                                <span class="stat-label">Success Rate</span>
+                                <span class="stat-value">98.2%</span>
+                            </div>
+                            <div class="usage-stat">
+                                <span class="stat-label">Avg Response Time</span>
+                                <span class="stat-value">1.2s</span>
+                            </div>
+                            <div class="usage-stat">
+                                <span class="stat-label">Cost This Month</span>
+                                <span class="stat-value">$47.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reaction Management Section -->
+            <section id="reaction-management" class="content-section">
+                <div class="section-header">
+                    <h2>Reaction Management</h2>
+                    <p>Add, edit, and manage chemical reaction database</p>
+                </div>
+
+                <div class="reaction-management-container">
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="add-reaction-btn">
+                            <i class="fas fa-plus"></i> Add New Reaction
+                        </button>
+                        <button class="btn btn-outline" id="export-reactions-btn">
+                            <i class="fas fa-download"></i> Export Database
+                        </button>
+                        <button class="btn btn-outline" id="import-reactions-btn">
+                            <i class="fas fa-upload"></i> Import Database
+                        </button>
+                        <!-- <button class="btn btn-danger" id="reset-database-btn">
+                            <i class="fas fa-undo"></i> Reset to Defaults
+                        </button> -->
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="search-filter-bar">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="reaction-search" placeholder="Search reactions...">
+                        </div>
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="Organic Synthesis">Organic Synthesis</option>
+                            <option value="Carbonyl Chemistry">Carbonyl Chemistry</option>
+                            <option value="Aromatic Chemistry">Aromatic Chemistry</option>
+                            <option value="Organometallic">Organometallic</option>
+                        </select>
+                    </div>
+
+                    <!-- Reactions Table -->
+                    <div class="reactions-table-container">
+                        <table class="reactions-table" id="reactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Reactants → Products</th>
+                                    <th>Category</th>
+                                    <th>Difficulty</th>
+                                    <th>Yield</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reactions-table-body">
+                                <!-- Reactions will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="reactions-pagination">
+                        <!-- Pagination controls will be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Molecule Models -->
+            <section id="molecule-models" class="content-section">
+                <div class="section-header">
+                    <h2>Molecule Models Management</h2>
+                    <p>Upload and manage 3D molecular visualization files</p>
+                </div>
+                <!-- Content for molecule models -->
+            </section>
+
+            <!-- User Management -->
+            <section id="users" class="content-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <p>Manage platform users and permissions</p>
+                </div>
+                <!-- Content for user management -->
+            </section>
+
+            <!-- Analytics -->
+            <section id="analytics" class="content-section">
+                <div class="section-header">
+                    <h2>Platform Analytics</h2>
+                    <p>View usage statistics and performance metrics</p>
+                </div>
+                <!-- Content for analytics -->
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h2>System Settings</h2>
+                    <p>Configure platform settings and preferences</p>
+                </div>
+                <!-- Content for settings -->
+            </section>
+        </div>
+    </div>
+
+    <!-- Reaction Modal -->
+    <div class="modal" id="reaction-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Reaction</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="reaction-form">
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h4>Basic Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reaction-name">Reaction Name *</label>
+                                <input type="text" id="reaction-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reaction-category">Category</label>
+                                <select id="reaction-category" name="category">
+                                    <option value="Organic Synthesis">Organic Synthesis</option>
+                                    <option value="Carbonyl Chemistry">Carbonyl Chemistry</option>
+                                    <option value="Aromatic Chemistry">Aromatic Chemistry</option>
+                                    <option value="Organometallic">Organometallic</option>
+                                    <option value="Biochemistry">Biochemistry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reaction-difficulty">Difficulty</label>
+                                <select id="reaction-difficulty" name="difficulty">
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reactants and Products -->
+                    <div class="form-section">
+                        <h4>Reactants</h4>
+                        <div class="input-blocks-container">
+                            <div class="input-blocks-header">
+                                <button type="button" class="btn btn-outline btn-small" id="add-reactant-block">
+                                    <i class="fas fa-plus"></i> Add Reactant
+                                </button>
+                            </div>
+                            <div id="reactants-blocks" class="input-blocks">
+                                <!-- Reactant blocks will be added here dynamically -->
+                            </div>
+                        </div>
+
+                        <h4>Products</h4>
+                        <div class="input-blocks-container">
+                            <div class="input-blocks-header">
+                                <button type="button" class="btn btn-outline btn-small" id="add-product-block">
+                                    <i class="fas fa-plus"></i> Add Product
+                                </button>
+                            </div>
+                            <div id="products-blocks" class="input-blocks">
+                                <!-- Product blocks will be added here dynamically -->
+                            </div>
+                        </div>
+
+                        <h4>Reagents & Catalysts</h4>
+                        <div class="input-blocks-container">
+                            <div class="input-blocks-header">
+                                <button type="button" class="btn btn-outline btn-small" id="add-reagent-block">
+                                    <i class="fas fa-plus"></i> Add Reagent
+                                </button>
+                            </div>
+                            <div id="reagents-blocks" class="input-blocks">
+                                <!-- Reagent blocks will be added here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reaction Conditions -->
+                    <div class="form-section">
+                        <h4>Reaction Conditions</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="temperature">Temperature</label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="temperature" name="temperature" step="0.1">
+                                    <select id="temperature-unit" name="temperatureUnit">
+                                        <option value="°C">°C</option>
+                                        <option value="K">K</option>
+                                        <option value="°F">°F</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pressure">Pressure</label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="pressure" name="pressure" step="0.1">
+                                    <select id="pressure-unit" name="pressureUnit">
+                                        <option value="atm">atm</option>
+                                        <option value="bar">bar</option>
+                                        <option value="Pa">Pa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Reaction Time</label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="time" name="time" step="0.1">
+                                    <select id="time-unit" name="timeUnit">
+                                        <option value="hours">hours</option>
+                                        <option value="minutes">minutes</option>
+                                        <option value="seconds">seconds</option>
+                                        <option value="days">days</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="solvent">Solvent</label>
+                                <input type="text" id="solvent" name="solvent" placeholder="e.g., Ethanol, Water, None">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="form-section">
+                        <h4>Reaction Metrics</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yield">Yield (%)</label>
+                                <input type="number" id="yield" name="yield" min="0" max="100" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="atom-economy">Atom Economy (%)</label>
+                                <input type="number" id="atom-economy" name="atomEconomy" min="0" max="100" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="energy-efficiency">Energy Efficiency</label>
+                                <select id="energy-efficiency" name="energyEfficiency">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mechanism -->
+                    <div class="form-section">
+                        <h4>Reaction Mechanism</h4>
+                        <div class="input-blocks-container">
+                            <div class="input-blocks-header">
+                                <button type="button" class="btn btn-outline btn-small" id="add-mechanism-block">
+                                    <i class="fas fa-plus"></i> Add Step
+                                </button>
+                            </div>
+                            <div id="mechanism-blocks" class="input-blocks">
+                                <!-- Mechanism blocks will be added here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alternate Pathways -->
+                    <div class="form-section">
+                        <h4>Alternate Pathways</h4>
+                        <div id="alternate-pathways">
+                            <!-- Alternate pathways will be added here -->
+                        </div>
+                        <button type="button" class="btn btn-outline btn-small" id="add-pathway-btn">
+                            <i class="fas fa-plus"></i> Add Alternate Pathway
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-cancel">Cancel</button>
+                <button class="btn btn-primary" id="modal-save">Save Reaction</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div class="modal" id="import-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Import Reactions Database</h3>
+                <button class="modal-close" id="import-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="import-data">JSON Data</label>
+                    <textarea id="import-data" placeholder="Paste JSON data here..." rows="15"></textarea>
+                </div>
+                <div class="import-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Warning: This will replace all existing reactions. Make sure to backup your data first.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="import-cancel">Cancel</button>
+                <button class="btn btn-primary" id="import-confirm">Import</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/reaction-database.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/video-player.js" defer></script>
+    <script src="../js/mobile-menu.js" defer></script>
+</body>
+</html>
