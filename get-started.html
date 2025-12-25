@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Get Started - ChemPilot</title>
+    <meta name="description" content="Get started with ChemPilot and explore our chemistry tools.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/visuals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .get-started-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5000;
+            backdrop-filter: blur(10px);
+        }
+
+        .get-started-content {
+            background: rgba(20, 20, 40, 0.95);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 8px 32px 0 rgba(102, 126, 234, 0.2);
+            animation: slideIn 0.6s ease-out;
+            position: relative;
+            z-index: 5001;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .get-started-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .get-started-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .get-started-header p {
+            font-size: 18px;
+            color: rgba(200, 200, 220, 0.8);
+            margin: 0;
+        }
+
+        .nav-buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 25px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+            border: 1.5px solid rgba(102, 126, 234, 0.4);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            min-height: 180px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.25), rgba(118, 75, 162, 0.25));
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-button:active {
+            transform: translateY(-4px);
+        }
+
+        .nav-button i {
+            font-size: 45px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover i {
+            font-size: 52px;
+            filter: drop-shadow(0 0 15px rgba(102, 126, 234, 0.6));
+        }
+
+        .nav-button-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e0e0e0;
+            text-align: center;
+            margin: 0;
+        }
+
+        .nav-button:hover .nav-button-text {
+            color: #ffffff;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            color: #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 5002;
+        }
+
+        .close-btn:hover {
+            background: rgba(102, 126, 234, 0.4);
+            border-color: rgba(102, 126, 234, 0.8);
+            transform: rotate(90deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .get-started-content {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+
+            .get-started-header h1 {
+                font-size: 36px;
+            }
+
+            .nav-buttons-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .nav-button {
+                min-height: 140px;
+                padding: 20px;
+            }
+
+            .nav-button i {
+                font-size: 35px;
+            }
+
+            .nav-button:hover i {
+                font-size: 40px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .get-started-content {
+                animation: none;
+            }
+
+            .nav-button {
+                transition: none;
+            }
+
+            .nav-button:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="video-bg">
+    <div id="loading-screen">
+        <video id="loading-video" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/videos/logo.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3);"></div>
+        <div class="loading-text">ChemPilot AI Assistant</div>
+        <div class="loading-text" style="font-size: 14px; font-weight: 300; margin-top: 10px;">Loading your chemistry assistant...</div>
+        <div class="loading-spinner"></div>
+    </div>
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Background Video Wrapper -->
+    <div class="bg-video-wrapper" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Get Started Modal -->
+    <div class="get-started-container">
+        <button class="close-btn" onclick="window.location.href='index.html'" title="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="get-started-content">
+            <div class="get-started-header">
+                <h1>Choose Your Path</h1>
+                <p>Select where you'd like to go in ChemPilot</p>
+            </div>
+
+            <div class="nav-buttons-grid">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    <p class="nav-button-text">Home</p>
+                </a>
+
+                <a href="reaction-predictor.html" class="nav-button">
+                    <i class="fas fa-flask"></i>
+                    <p class="nav-button-text">Reaction Predictor</p>
+                </a>
+
+                <a href="pathway-finder.html" class="nav-button">
+                    <i class="fas fa-sitemap"></i>
+                    <p class="nav-button-text">Pathway Finder</p>
+                </a>
+
+                <a href="support.html" class="nav-button">
+                    <i class="fas fa-comments"></i>
+                    <p class="nav-button-text">Chat with AI</p>
+                </a>
+
+                <a href="admin/login.html" class="nav-button">
+                    <i class="fas fa-lock"></i>
+                    <p class="nav-button-text">Admin Login</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include visuals scripts -->
+    <script src="js/visuals.js"></script>
+    <script src="js/video-player.js"></script>
+    <script src="js/mobile-menu.js" defer></script>
+    
+    <!-- Loading screen fade-out -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('fade-out');
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

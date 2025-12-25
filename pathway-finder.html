@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pathway Finder - ChemPilot | Explore Reaction Pathways</title>
+    <meta name="description" content="Explore chemical reaction pathways and mechanisms. Search through our comprehensive database of reactions with detailed step-by-step information.">
+    <meta name="keywords" content="reaction pathways, chemical mechanisms, reaction database, organic chemistry, synthesis pathways">
+    <meta name="author" content="ChemPilot">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chempilot.ai/pathway-finder.html">
+    <meta property="og:title" content="Pathway Finder - ChemPilot">
+    <meta property="og:description" content="Explore chemical reaction pathways with detailed mechanisms and step-by-step information.">
+    <meta property="og:image" content="https://chempilot.ai/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chempilot.ai/pathway-finder.html">
+    <meta property="twitter:title" content="Pathway Finder - ChemPilot">
+    <meta property="twitter:description" content="Explore chemical reaction pathways with detailed mechanisms.">
+    <meta property="twitter:image" content="https://chempilot.ai/assets/images/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://chempilot.ai/pathway-finder.html">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/pathway-finder.css">
+    <link rel="stylesheet" href="styles/visuals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/main.css" as="style">
+    <link rel="preload" href="styles/pathway-finder.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="js/pathway-finder.js" as="script">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ChemPilot Pathway Finder",
+        "description": "Interactive chemical reaction pathway explorer with detailed mechanisms",
+        "applicationCategory": "ScienceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "ChemPilot"
+        }
+    }
+    </script>
+</head>
+<body class="video-bg">
+    <div id="loading-screen">
+        <video id="loading-video" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/videos/logo.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3);"></div>
+        <div class="loading-text">ChemPilot AI Assistant</div>
+        <div class="loading-text" style="font-size: 14px; font-weight: 300; margin-top: 10px;">Loading your chemistry assistant...</div>
+        <div class="loading-spinner"></div>
+    </div>
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('fade-out');
+                }
+            }, 500);
+        });
+    </script>
+    <div class="bg-video-wrapper" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <video src="assets/images/logo.mp4" alt="ChemPilot Logo" class="logo" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+                    <span class="brand-name">ChemPilot</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="reaction-predictor.html"><i class="fas fa-flask"></i>Reaction Database</a></li>
+                    <li><a href="pathway-finder.html" class="active"><i class="fas fa-route"></i>Pathway Finder</a></li>
+                    <li><a href="support.html"><i class="fas fa-comments"></i>Chat with AI</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="admin/login.html" class="btn btn-outline">Admin Login</a>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pathway-finder" role="main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Reaction Pathway Finder</h1>
+                <p>Explore detailed reaction pathways and mechanisms from our comprehensive database</p>
+            </div>
+
+            <div class="pathway-container">
+                <!-- Search Section -->
+                <section class="search-section">
+                    <div class="search-controls">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="pathway-search" placeholder="Search reactions by reactant, product, or name...">
+                        </div>
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="Organic Synthesis">Organic Synthesis</option>
+                            <option value="Carbonyl Chemistry">Carbonyl Chemistry</option>
+                            <option value="Aromatic Chemistry">Aromatic Chemistry</option>
+                            <option value="Organometallic">Organometallic</option>
+                            <option value="Biochemistry">Biochemistry</option>
+                        </select>
+                        <button class="btn btn-primary" id="search-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="results-section" id="results-section" style="display: none;">
+                    <div class="results-header">
+                        <h2>Reaction Pathways</h2>
+                        <div class="results-count" id="results-count">0 pathways found</div>
+                    </div>
+
+                    <div class="pathways-grid" id="pathways-grid">
+                        <!-- Pathways will be populated here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination controls will be added here -->
+                    </div>
+                </section>
+
+                <!-- No Results -->
+                <section class="no-results" id="no-results" style="display: none;">
+                    <div class="no-results-content">
+                        <i class="fas fa-search"></i>
+                        <h3>No Pathways Found</h3>
+                        <p>Try adjusting your search terms or browse all available reactions.</p>
+                        <button class="btn btn-primary" id="browse-all-btn">Browse All Reactions</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Reaction Detail Modal -->
+    <div class="modal" id="reaction-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 id="reaction-title">Reaction Details</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="reaction-detail" id="reaction-detail">
+                    <!-- Reaction details will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <video src="assets/images/logo.mp4" alt="ChemPilot Logo" class="logo" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+                        <span class="brand-name">ChemPilot</span>
+                    </div>
+                    <p>AI-powered chemistry assistant for researchers, educators, and industry professionals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="reaction-predictor.html">Reaction Database</a></li>
+                        <li><a href="pathway-finder.html">Pathway Finder</a></li>
+                        <li><a href="dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ChemPilot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/reaction-database.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/video-player.js" defer></script>
+    <script src="js/mobile-menu.js" defer></script>
+    <script src="js/pathway-finder.js"></script>
+</body>
+</html>
