@@ -1,8 +1,11 @@
 // Homepage specific functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Update actual reaction count
+    updateActualReactionCount();
+
     // Animate stats counter
     const statNumbers = document.querySelectorAll('.stat-number');
-    
+
     const animateValue = (element, start, end, duration) => {
         let startTimestamp = null;
         const step = (timestamp) => {
@@ -16,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         window.requestAnimationFrame(step);
     };
-    
+
     // Intersection Observer for stats animation
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     statNumbers.forEach(stat => {
         statsObserver.observe(stat);
     });
