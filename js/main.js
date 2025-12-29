@@ -139,17 +139,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (e) {
         console.error('Icon animation error:', e);
     }
-
 });
-
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z304MWY73W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z304MWY73W');
-</script>
