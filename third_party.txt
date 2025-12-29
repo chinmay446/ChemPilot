@@ -1,0 +1,7 @@
+THIRD-PARTY CONTENT NOTICE
+
+Referenced via CDN:
+- Google Fonts
+- Font Awesome
+
+These are excluded from the copyright claim.
