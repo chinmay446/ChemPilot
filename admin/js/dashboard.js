@@ -426,6 +426,229 @@ function updateDashboardStats() {
     });
 }
 
+function updateReactionClassificationChart() {
+    const reactions = window.reactionDatabase.getAllReactions();
+
+    // Define classification categories
+    const classifications = {
+        'Organic': ['Organic Synthesis', 'Carbonyl Chemistry', 'Aromatic Chemistry', 'Organometallic Chemistry',
+                   'Pericyclic Reactions', 'Oxidation Reactions', 'Reduction Reactions', 'Elimination Reactions',
+                   'Addition Reactions', 'Condensation Reactions', 'Rearrangements', 'Hydrolysis', 'Cross-Coupling',
+                   'Amine Synthesis', 'Ring Formation', 'Free Radical Chemistry', 'Polymer Chemistry',
+                   'Heterocycle Synthesis', 'Asymmetric Synthesis', 'Organocatalysis', 'Multicomponent Reactions',
+                   'Cycloaddition', 'Olefination', 'Aldol Reactions', 'Alkaloid Synthesis', 'Acyl Substitution',
+                   'Acid-Base Chemistry', 'Ester Chemistry', 'Protection', 'Deprotection', 'Decarboxylation',
+                   'Halogenation', 'Coupling Reactions', 'Aromatization', 'Transesterification', 'Imine Formation',
+                   'Enamine Formation', 'Acylation', 'Sulfonylation', 'Radical Reactions', 'Diazotization Chemistry',
+                   'Dye Synthesis', 'Conjugate Addition', 'Electrophilic Addition', 'Electrophilic Aromatic Halogenation',
+                   'Bromination of Alkenes', 'Iodination', 'Chlorination of Alkanes', 'Fluorination', 'Nitration of Aromatics',
+                   'Sulfonation', 'Friedel-Crafts Alkylation', 'Friedel-Crafts Acylation', 'Nucleophilic Aromatic Substitution',
+                   'Azo Coupling', 'Quinone Formation', 'Anthraquinone Synthesis', 'Nucleophilic Substitution',
+                   'Ether Synthesis', 'Carboxylic Acid Synthesis', 'Reimer-Tiemann Reaction', 'Kolbe-Schmitt Reaction',
+                   'Sandmeyer Reaction', 'Gattermann Reaction', 'Schotten-Baumann Reaction', 'Hinsberg Test',
+                   'Carbylamine Reaction', 'Diazotization Reaction', 'Coupling Reaction', 'Lucas Test', 'Cross Aldol Condensation',
+                   'Clemmensen Reduction', 'Wolff-Kishner Reduction', 'Rosenmund Reduction', 'Stephen Reaction',
+                   'Hell-Volhard-Zelinsky Reaction', 'Perkin Reaction', 'Benzoin Condensation', 'Haloform Reaction',
+                   'Hoffmann Bromamide Reaction', 'Carbylamine Reaction', 'Diazotization Reaction', 'Coupling Reaction',
+                   'Hinsberg Test', 'Schotten-Baumann Reaction', 'Molisch Test', 'Biuret Test', 'Ninhydrin Reaction',
+                   'Xanthoproteic Reaction', 'Addition Polymerization', 'Condensation Polymerization', 'SN1 Reaction',
+                   'SN2 Reaction', 'E1 Elimination', 'E2 Elimination', 'Electrophilic Addition', 'Oxidation of Alcohol to Aldehyde',
+                   'Reduction of Ketone with NaBH4', 'Acid-Base Neutralization', 'Nucleophilic Acyl Substitution',
+                   'Claisen Rearrangement', 'Cope Rearrangement', 'Aldol Addition Reaction', 'Tishchenko Reaction',
+                   'Benzilic Acid Rearrangement', 'Favorskii Rearrangement', 'Hofmann Elimination', 'Curtius Rearrangement',
+                   'Lossen Rearrangement', 'Schmidt Reaction', 'Beckmann Rearrangement', 'Fries Rearrangement',
+                   'Knoevenagel Condensation', 'Stork Enamine Reaction', 'Mukaiyama Aldol Reaction', 'Baylis-Hillman Reaction',
+                   'Sharpless Epoxidation', '1,3-Dipolar Cycloaddition', 'Pauson-Khand Reaction', 'Sonogashira Coupling',
+                   'Buchwald-Hartwig Amination', 'Negishi Coupling', 'Kumada Coupling', 'Stille Coupling', 'Hiyama Coupling',
+                   'Intramolecular Aldol Condensation', 'Dieckmann Condensation', 'Thorpe Reaction', 'Darzens Reaction',
+                   'Johnson-Corey-Chaykovsky Reaction', 'Simmons-Smith Reaction', 'Blaise Reaction', 'McMurry Coupling',
+                   'Ullmann Reaction', 'Glaser Coupling', 'Meerwein Arylation', 'Gomberg-Bachmann Reaction', 'Barton Decarboxylation',
+                   'Hunsdiecker Reaction', 'Fenton Reaction', 'Neber Rearrangement', 'Stevens Rearrangement', 'Sommelet-Hauser Rearrangement',
+                   'Truce-Smiles Rearrangement', 'Newman-Kwart Rearrangement', 'Meisenheimer Rearrangement', 'Dienone-Phenol Rearrangement',
+                   'Cornforth Rearrangement', 'Smiles Rearrangement', 'Arndt-Eistert Reaction', 'Japp-Klingemann Reaction',
+                   'Haller-Bauer Reaction', 'Von Richter Reaction', 'Sommelet Reaction', 'Willgerodt Reaction', 'Kindler Reaction',
+                   'Dakin Reaction', 'Meerwein-Ponndorf-Verley Reduction', 'Oppenauer Oxidation', 'Parikh-Doering Oxidation',
+                   'Corey-Kim Oxidation', 'Nicolaou Oxidation', 'Shapiro Reaction', 'Bamford-Stevens Reaction', 'McFadyen-Stevens Reaction',
+                   'Chugaev Reaction', 'Cope Elimination', 'Emde Degradation', 'von Braun Reaction', 'Chapman Rearrangement',
+                   'Wallach Rearrangement', 'Orton Rearrangement', 'Fischer-Hepp Rearrangement', 'Bamberger Rearrangement',
+                   'Dimroth Rearrangement', 'Cornforth Rearrangement', 'Smiles Rearrangement', 'Truce-Smiles Rearrangement',
+                   'Newman-Kwart Rearrangement', 'Meisenheimer Rearrangement', 'Dienone-Phenol Rearrangement', 'Arndt-Eistert Reaction',
+                   'Japp-Klingemann Reaction', 'Haller-Bauer Reaction', 'Von Richter Reaction', 'Sommelet Reaction', 'Willgerodt Reaction',
+                   'Kindler Reaction', 'Dakin Reaction', 'Meerwein-Ponndorf-Verley Reduction', 'Oppenauer Oxidation', 'Parikh-Doering Oxidation',
+                   'Corey-Kim Oxidation', 'Nicolaou Oxidation', 'Shapiro Reaction', 'Bamford-Stevens Reaction', 'McFadyen-Stevens Reaction',
+                   'Chugaev Reaction', 'Cope Elimination', 'Emde Degradation', 'von Braun Reaction', 'Chapman Rearrangement',
+                   'Wallach Rearrangement', 'Orton Rearrangement', 'Fischer-Hepp Rearrangement', 'Bamberger Rearrangement',
+                   'Dimroth Rearrangement', 'Petasis Reaction', 'Mannich Reaction', 'Bucherer-Bergs Reaction', 'Hofmann-Löffler-Freytag Reaction',
+                   'Polonovski Reaction', 'Gabriel-Colman Rearrangement', 'Eschweiler-Clarke Reaction', 'Tiffeneau-Demjanov Rearrangement',
+                   'Wagner-Meerwein Rearrangement', 'Nametkin Rearrangement', 'Whitmore 1,2-Rearrangement', 'Arndt-Eistert Reaction',
+                   'Japp-Klingemann Reaction', 'Haller-Bauer Reaction', 'Von Richter Reaction', 'Sommelet Reaction', 'Willgerodt Reaction',
+                   'Kindler Reaction', 'Dakin Reaction', 'Meerwein-Ponndorf-Verley Reduction', 'Oppenauer Oxidation', 'Parikh-Doering Oxidation',
+                   'Corey-Kim Oxidation', 'Nicolaou Oxidation', 'Shapiro Reaction', 'Bamford-Stevens Reaction', 'McFadyen-Stevens Reaction',
+                   'Chugaev Reaction', 'Cope Elimination', 'Emde Degradation', 'von Braun Reaction', 'Chapman Rearrangement',
+                   'Wallach Rearrangement', 'Orton Rearrangement', 'Fischer-Hepp Rearrangement', 'Bamberger Rearrangement',
+                   'Dimroth Rearrangement', 'Ugi Reaction', 'Passerini Reaction', 'Biginelli Reaction', 'Paal-Knorr Synthesis',
+                   'Knorr Pyrazole Synthesis', 'Gewald Reaction', 'Hantzsch Dihydropyridine Synthesis', 'Feist-Benary Synthesis',
+                   'Pictet-Spengler Reaction', 'Bischler-Napieralski Reaction', 'Skraup Synthesis', 'Pechmann Condensation',
+                   'Kostanecki-Robinson Reaction', 'Allan-Robinson Reaction', 'Baker-Venkataraman Rearrangement', 'Doebner Reaction',
+                   'Pomeranz-Fritsch Reaction', 'Combes Quinoline Synthesis', 'Fischer Indole Synthesis', 'Reissert Indole Synthesis',
+                   'Madelung Indole Synthesis', 'Bucherer Carbazole Synthesis', 'Graebe-Ullmann Reaction', 'Pschorr Reaction',
+                   'Niementowski Quinazoline Synthesis', 'Traube Purine Synthesis', 'Conrad-Limpach Reaction', 'Piloty-Robinson Synthesis',
+                   'Bartoli Indole Synthesis', 'Fukuyama Reduction', 'Luche Reduction', 'Evans Aldol Reaction', 'Denmark Aldol Reaction',
+                   'Hajos-Parrish Reaction', 'Wieland-Miescher Ketone Synthesis', 'MacMillan Aldol Reaction', 'Robinson-Schöpf Reaction',
+                   'Larock Indole Synthesis', 'Corey-Bakshi-Shibata Reduction', 'Noyori Asymmetric Hydrogenation', 'Sharpless Asymmetric Dihydroxylation',
+                   'Jacobsen Asymmetric Epoxidation', 'Shi Epoxidation', 'Julia Olefination', 'Horner-Wadsworth-Emmons Reaction',
+                   'Still-Gennari Olefination', 'Tebbe Olefination', 'Petasis Reaction', 'Mannich Reaction', 'Bucherer-Bergs Reaction',
+                   'Hofmann-Löffler-Freytag Reaction', 'Polonovski Reaction', 'Gabriel-Colman Rearrangement', 'Eschweiler-Clarke Reaction',
+                   'Tiffeneau-Demjanov Rearrangement', 'Wagner-Meerwein Rearrangement', 'Nametkin Rearrangement', 'Whitmore 1,2-Rearrangement',
+                   'Appel Reaction', 'Mitsunobu Reaction', 'Dess-Martin Oxidation', 'Jones Oxidation', 'Collins Oxidation',
+                   'Ley Oxidation', 'TPAP Oxidation', 'Staudinger Reaction', 'Ugi Reaction', 'Passerini Reaction', 'Biginelli Reaction',
+                   'Paal-Knorr Synthesis', 'Knorr Pyrazole Synthesis', 'Gewald Reaction', 'Hantzsch Dihydropyridine Synthesis',
+                   'Feist-Benary Synthesis', 'Pictet-Spengler Reaction', 'Bischler-Napieralski Reaction', 'Skraup Synthesis',
+                   'Pechmann Condensation', 'Kostanecki-Robinson Reaction', 'Allan-Robinson Reaction', 'Baker-Venkataraman Rearrangement',
+                   'Doebner Reaction', 'Pomeranz-Fritsch Reaction', 'Combes Quinoline Synthesis', 'Fischer Indole Synthesis',
+                   'Reissert Indole Synthesis', 'Madelung Indole Synthesis', 'Bucherer Carbazole Synthesis', 'Graebe-Ullmann Reaction',
+                   'Pschorr Reaction', 'Niementowski Quinazoline Synthesis', 'Traube Purine Synthesis', 'Conrad-Limpach Reaction',
+                   'Piloty-Robinson Synthesis', 'Bartoli Indole Synthesis', 'Fukuyama Reduction', 'Luche Reduction', 'Evans Aldol Reaction',
+                   'Denmark Aldol Reaction', 'Hajos-Parrish Reaction', 'Wieland-Miescher Ketone Synthesis', 'MacMillan Aldol Reaction',
+                   'Robinson-Schöpf Reaction', 'Larock Indole Synthesis', 'Corey-Bakshi-Shibata Reduction', 'Noyori Asymmetric Hydrogenation',
+                   'Sharpless Asymmetric Dihydroxylation', 'Jacobsen Asymmetric Epoxidation', 'Shi Epoxidation', 'Julia Olefination',
+                   'Horner-Wadsworth-Emmons Reaction', 'Still-Gennari Olefination', 'Tebbe Olefination', 'Catalytic Hydrogenation',
+                   'Hydrogenolysis', 'Decarboxylation', 'Dehydration', 'Electrophilic Aromatic Halogenation', 'Bromination of Alkenes',
+                   'Iodination', 'Chlorination of Alkanes', 'Fluorination', 'Nitration of Aromatics', 'Sulfonation', 'Friedel-Crafts Alkylation',
+                   'Friedel-Crafts Acylation', 'Nucleophilic Aromatic Substitution', 'Azo Coupling', 'Quinone Formation', 'Anthraquinone Synthesis'],
+        'Inorganic': ['Electrolysis', 'Kolbe\'s Electrolysis', 'Frankland Reaction', 'Wurtz Reaction', 'Wurtz-Fittig Reaction',
+                     'Fittig Reaction', 'Swarts Reaction', 'Gattermann Reaction', 'Kolbe-Schmitt Reaction', 'Reimer-Tiemann Reaction',
+                     'Sandmeyer Reaction', 'Gattermann Reaction', 'Schotten-Baumann Reaction', 'Hinsberg Test', 'Carbylamine Reaction',
+                     'Diazotization Reaction', 'Coupling Reaction', 'Lucas Test', 'Biuret Test', 'Ninhydrin Reaction', 'Xanthoproteic Reaction',
+                     'Fenton Reaction', 'von Braun Reaction', 'Hunsdiecker Reaction', 'Barton Decarboxylation', 'Meerwein Arylation',
+                     'Gomberg-Bachmann Reaction', 'Pschorr Reaction', 'Niementowski Quinazoline Synthesis', 'Traube Purine Synthesis',
+                     'Conrad-Limpach Reaction', 'Piloty-Robinson Synthesis', 'Bartoli Indole Synthesis', 'Fukuyama Reduction',
+                     'Luche Reduction', 'Evans Aldol Reaction', 'Denmark Aldol Reaction', 'Hajos-Parrish Reaction', 'Wieland-Miescher Ketone Synthesis',
+                     'MacMillan Aldol Reaction', 'Robinson-Schöpf Reaction', 'Larock Indole Synthesis', 'Corey-Bakshi-Shibata Reduction',
+                     'Noyori Asymmetric Hydrogenation', 'Sharpless Asymmetric Dihydroxylation', 'Jacobsen Asymmetric Epoxidation',
+                     'Shi Epoxidation', 'Julia Olefination', 'Horner-Wadsworth-Emmons Reaction', 'Still-Gennari Olefination',
+                     'Tebbe Olefination', 'Petasis Reaction', 'Mannich Reaction', 'Bucherer-Bergs Reaction', 'Hofmann-Löffler-Freytag Reaction',
+                     'Polonovski Reaction', 'Gabriel-Colman Rearrangement', 'Eschweiler-Clarke Reaction', 'Tiffeneau-Demjanov Rearrangement',
+                     'Wagner-Meerwein Rearrangement', 'Nametkin Rearrangement', 'Whitmore 1,2-Rearrangement', 'Arndt-Eistert Reaction',
+                     'Japp-Klingemann Reaction', 'Haller-Bauer Reaction', 'Von Richter Reaction', 'Sommelet Reaction', 'Willgerodt Reaction',
+                     'Kindler Reaction', 'Dakin Reaction', 'Meerwein-Ponndorf-Verley Reduction', 'Oppenauer Oxidation', 'Parikh-Doering Oxidation',
+                     'Corey-Kim Oxidation', 'Nicolaou Oxidation', 'Shapiro Reaction', 'Bamford-Stevens Reaction', 'McFadyen-Stevens Reaction',
+                     'Chugaev Reaction', 'Cope Elimination', 'Emde Degradation', 'von Braun Reaction', 'Chapman Rearrangement',
+                     'Wallach Rearrangement', 'Orton Rearrangement', 'Fischer-Hepp Rearrangement', 'Bamberger Rearrangement',
+                     'Dimroth Rearrangement', 'Cornforth Rearrangement', 'Smiles Rearrangement', 'Truce-Smiles Rearrangement',
+                     'Newman-Kwart Rearrangement', 'Meisenheimer Rearrangement', 'Dienone-Phenol Rearrangement', 'Arndt-Eistert Reaction',
+                     'Japp-Klingemann Reaction', 'Haller-Bauer Reaction', 'Von Richter Reaction', 'Sommelet Reaction', 'Willgerodt Reaction',
+                     'Kindler Reaction', 'Dakin Reaction', 'Meerwein-Ponndorf-Verley Reduction', 'Oppenauer Oxidation', 'Parikh-Doering Oxidation',
+                     'Corey-Kim Oxidation', 'Nicolaou Oxidation', 'Shapiro Reaction', 'Bamford-Stevens Reaction', 'McFadyen-Stevens Reaction',
+                     'Chugaev Reaction', 'Cope Elimination', 'Emde Degradation', 'von Braun Reaction', 'Chapman Rearrangement',
+                     'Wallach Rearrangement', 'Orton Rearrangement', 'Fischer-Hepp Rearrangement', 'Bamberger Rearrangement',
+                     'Dimroth Rearrangement', 'Ugi Reaction', 'Passerini Reaction', 'Biginelli Reaction', 'Paal-Knorr Synthesis',
+                     'Knorr Pyrazole Synthesis', 'Gewald Reaction', 'Hantzsch Dihydropyridine Synthesis', 'Feist-Benary Synthesis',
+                     'Pictet-Spengler Reaction', 'Bischler-Napieralski Reaction', 'Skraup Synthesis', 'Pechmann Condensation',
+                     'Kostanecki-Robinson Reaction', 'Allan-Robinson Reaction', 'Baker-Venkataraman Rearrangement', 'Doebner Reaction',
+                     'Pomeranz-Fritsch Reaction', 'Combes Quinoline Synthesis', 'Fischer Indole Synthesis', 'Reissert Indole Synthesis',
+                     'Madelung Indole Synthesis', 'Bucherer Carbazole Synthesis', 'Graebe-Ullmann Reaction', 'Pschorr Reaction',
+                     'Niementowski Quinazoline Synthesis', 'Traube Purine Synthesis', 'Conrad-Limpach Reaction', 'Piloty-Robinson Synthesis',
+                     'Bartoli Indole Synthesis', 'Fukuyama Reduction', 'Luche Reduction', 'Evans Aldol Reaction', 'Denmark Aldol Reaction',
+                     'Hajos-Parrish Reaction', 'Wieland-Miescher Ketone Synthesis', 'MacMillan Aldol Reaction', 'Robinson-Schöpf Reaction',
+                     'Larock Indole Synthesis', 'Corey-Bakshi-Shibata Reduction', 'Noyori Asymmetric Hydrogenation', 'Sharpless Asymmetric Dihydroxylation',
+                     'Jacobsen Asymmetric Epoxidation', 'Shi Epoxidation', 'Julia Olefination', 'Horner-Wadsworth-Emmons Reaction',
+                     'Still-Gennari Olefination', 'Tebbe Olefination', 'Petasis Reaction', 'Mannich Reaction', 'Bucherer-Bergs Reaction',
+                     'Hofmann-Löffler-Freytag Reaction', 'Polonovski Reaction', 'Gabriel-Colman Rearrangement', 'Eschweiler-Clarke Reaction',
+                     'Tiffeneau-Demjanov Rearrangement', 'Wagner-Meerwein Rearrangement', 'Nametkin Rearrangement', 'Whitmore 1,2-Rearrangement',
+                     'Appel Reaction', 'Mitsunobu Reaction', 'Dess-Martin Oxidation', 'Jones Oxidation', 'Collins Oxidation',
+                     'Ley Oxidation', 'TPAP Oxidation', 'Staudinger Reaction', 'Ugi Reaction', 'Passerini Reaction', 'Biginelli Reaction',
+                     'Paal-Knorr Synthesis', 'Knorr Pyrazole Synthesis', 'Gewald Reaction', 'Hantzsch Dihydropyridine Synthesis',
+                     'Feist-Benary Synthesis', 'Pictet-Spengler Reaction', 'Bischler-Napieralski Reaction', 'Skraup Synthesis',
+                     'Pechmann Condensation', 'Kostanecki-Robinson Reaction', 'Allan-Robinson Reaction', 'Baker-Venkataraman Rearrangement',
+                     'Doebner Reaction', 'Pomeranz-Fritsch Reaction', 'Combes Quinoline Synthesis', 'Fischer Indole Synthesis',
+                     'Reissert Indole Synthesis', 'Madelung Indole Synthesis', 'Bucherer Carbazole Synthesis', 'Graebe-Ullmann Reaction',
+                     'Pschorr Reaction', 'Niementowski Quinazoline Synthesis', 'Traube Purine Synthesis', 'Conrad-Limpach Reaction',
+                     'Piloty-Robinson Synthesis', 'Bartoli Indole Synthesis', 'Fukuyama Reduction', 'Luche Reduction', 'Evans Aldol Reaction',
+                     'Denmark Aldol Reaction', 'Hajos-Parrish Reaction', 'Wieland-Miescher Ketone Synthesis', 'MacMillan Aldol Reaction',
+                     'Robinson-Schöpf Reaction', 'Larock Indole Synthesis', 'Corey-Bakshi-Shibata Reduction', 'Noyori Asymmetric Hydrogenation',
+                     'Sharpless Asymmetric Dihydroxylation', 'Jacobsen Asymmetric Epoxidation', 'Shi Epoxidation', 'Julia Olefination',
+                     'Horner-Wadsworth-Emmons Reaction', 'Still-Gennari Olefination', 'Tebbe Olefination', 'Catalytic Hydrogenation',
+                     'Hydrogenolysis', 'Decarboxylation', 'Dehydration', 'Electrophilic Aromatic Halogenation', 'Bromination of Alkenes',
+                     'Iodination', 'Chlorination of Alkanes', 'Fluorination', 'Nitration of Aromatics', 'Sulfonation', 'Friedel-Crafts Alkylation',
+                     'Friedel-Crafts Acylation', 'Nucleophilic Aromatic Substitution', 'Azo Coupling', 'Quinone Formation', 'Anthraquinone Synthesis'],
+        'Physical': ['Acid-Base Neutralization', 'Catalytic Hydrogenation', 'Hydrogenolysis', 'Decarboxylation', 'Dehydration',
+                    'Electrophilic Aromatic Halogenation', 'Bromination of Alkenes', 'Iodination', 'Chlorination of Alkanes',
+                    'Fluorination', 'Nitration of Aromatics', 'Sulfonation', 'Friedel-Crafts Alkylation', 'Friedel-Crafts Acylation',
+                    'Nucleophilic Aromatic Substitution', 'Azo Coupling', 'Quinone Formation', 'Anthraquinone Synthesis'],
+        'Analytical': ['Molisch Test', 'Biuret Test', 'Ninhydrin Reaction', 'Xanthoproteic Reaction', 'Lucas Test', 'Hinsberg Test',
+                      'Carbylamine Reaction', 'Diazotization Reaction', 'Coupling Reaction']
+    };
+
+    // Count reactions in each classification
+    const counts = { Organic: 0, Inorganic: 0, Physical: 0, Analytical: 0 };
+
+    reactions.forEach(reaction => {
+        const category = reaction.category;
+        for (const [classification, categories] of Object.entries(classifications)) {
+            if (categories.includes(category)) {
+                counts[classification]++;
+                break;
+            }
+        }
+    });
+
+    // Create chart data
+    const chartData = {
+        labels: Object.keys(counts),
+        datasets: [{
+            data: Object.values(counts),
+            backgroundColor: [
+                '#FF6384', // Organic - Red
+                '#36A2EB', // Inorganic - Blue
+                '#FFCE56', // Physical - Yellow
+                '#4BC0C0'  // Analytical - Teal
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // Get canvas element
+    const canvas = document.getElementById('reaction-classification-chart');
+    if (!canvas) return;
+
+    // Destroy existing chart if it exists
+    if (window.reactionChart) {
+        window.reactionChart.destroy();
+    }
+
+    // Create new chart
+    const ctx = canvas.getContext('2d');
+    window.reactionChart = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
+                            return `${label}: ${value} reactions (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
 function showMessage(message, type) {
     // Create message element if it doesn't exist
     let messageEl = document.getElementById('dashboard-message');
