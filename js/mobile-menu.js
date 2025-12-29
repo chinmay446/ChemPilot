@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var mobileBtn = document.querySelector('.mobile-menu-btn');
     var navLinks = document.querySelector('.nav-links');
-    var navActions = document.querySelector('.nav-actions');
 
     if (!mobileBtn || !navLinks) return;
 
