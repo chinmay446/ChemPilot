@@ -1,0 +1,11 @@
+AUTHORS & OWNERSHIP
+
+Project Name: ChemPilot
+Author: Chinmay Joshi
+      : Dhairyashil patil
+      : Amrita kharasne 
+      : Sakshi walzade 
+Created: 2024–2025
+
+All original source code, UI design, and textual content
+are authored by Chinmay Joshi unless otherwise stated.
