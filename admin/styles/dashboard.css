@@ -470,6 +470,27 @@
     font-size: 0.9rem;
 }
 
+/* Chart Container */
+.chart-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 2rem;
+}
+
+.chart-container h3 {
+    margin: 0 0 1rem 0;
+    color: var(--light-text);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
 /* Recent Activity */
 .recent-activity {
     background: var(--glass-bg);
