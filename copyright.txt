@@ -1,0 +1,12 @@
+Copyright © 2025 Chinmay Joshi
+
+This project ("ChemPilot") contains original source code, UI design,
+and written content authored by Chinmay Joshi , Dhairyashil patil
+,Amrita kharasne & Sakshi walzade.
+
+Excluded from this copyright claim:
+- Third-party libraries (Font Awesome, Google Fonts, etc.)
+- External CDN resources
+- Placeholder or demo media assets
+
+All excluded materials remain the property of their respective owners.
