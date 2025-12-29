@@ -13159,6 +13159,6639 @@ class ReactionDatabase {
                 difficulty: 'Intermediate',
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_408',
+                name: 'Glycolysis',
+                reactants: ['Glucose', 'ATP', 'NAD+'],
+                reagents: ['Hexokinase', 'Phosphofructokinase', 'Pyruvate kinase'],
+                products: ['Pyruvate', 'ATP', 'NADH'],
+                mechanism: [
+                    'Phosphorylation of glucose to glucose-6-phosphate',
+                    'Isomerization to fructose-6-phosphate',
+                    'Second phosphorylation to fructose-1,6-bisphosphate',
+                    'Cleavage to DHAP and G3P',
+                    'Oxidation and phosphorylation steps',
+                    'Final substrate-level phosphorylation'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Metabolic Pathways',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_409',
+                name: 'Citric Acid Cycle',
+                reactants: ['Acetyl-CoA', 'Oxaloacetate', 'NAD+', 'FAD'],
+                reagents: ['Citrate synthase', 'Isocitrate dehydrogenase', 'Alpha-ketoglutarate dehydrogenase'],
+                products: ['CO2', 'ATP', 'NADH', 'FADH2'],
+                mechanism: [
+                    'Condensation of acetyl-CoA with oxaloacetate',
+                    'Isomerization and dehydration',
+                    'Decarboxylation and oxidation steps',
+                    'Substrate-level phosphorylation',
+                    'Regeneration of oxaloacetate'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Mitochondrial matrix',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Metabolic Pathways',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_410',
+                name: 'Oxidative Phosphorylation',
+                reactants: ['NADH', 'FADH2', 'ADP', 'O2'],
+                reagents: ['Complex I-IV', 'ATP synthase'],
+                products: ['ATP', 'H2O', 'NAD+', 'FAD'],
+                mechanism: [
+                    'Electron transfer through complexes',
+                    'Proton pumping across membrane',
+                    'Proton gradient formation',
+                    'ATP synthesis via chemiosmosis',
+                    'Water formation from oxygen'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Mitochondrial membrane',
+                    time: 'Continuous',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: 'Variable',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Energy Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_411',
+                name: 'Pentose Phosphate Pathway',
+                reactants: ['Glucose-6-phosphate', 'NADP+'],
+                reagents: ['Glucose-6-phosphate dehydrogenase', 'Transketolase'],
+                products: ['Ribose-5-phosphate', 'NADPH', 'CO2'],
+                mechanism: [
+                    'Oxidative phase: G6P to ribulose-5-P',
+                    'Non-oxidative phase: interconversions',
+                    'NADPH production for biosynthesis',
+                    'Pentose production for nucleotides'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Metabolic Pathways',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_412',
+                name: 'Gluconeogenesis',
+                reactants: ['Pyruvate', 'ATP', 'GTP', 'NADH'],
+                reagents: ['Pyruvate carboxylase', 'Phosphoenolpyruvate carboxykinase'],
+                products: ['Glucose', 'ADP', 'GDP', 'NAD+'],
+                mechanism: [
+                    'Pyruvate to oxaloacetate',
+                    'Phosphoenolpyruvate formation',
+                    'Reverse glycolysis steps',
+                    'Glucose-6-phosphate to glucose',
+                    'Bypassing irreversible glycolysis steps'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol/mitochondria',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Metabolic Pathways',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_413',
+                name: 'β-Oxidation of Fatty Acids',
+                reactants: ['Fatty acyl-CoA', 'FAD', 'NAD+', 'CoA'],
+                reagents: ['Acyl-CoA dehydrogenase', 'Enoyl-CoA hydratase'],
+                products: ['Acetyl-CoA', 'FADH2', 'NADH'],
+                mechanism: [
+                    'Dehydrogenation to trans-enoyl-CoA',
+                    'Hydration to 3-hydroxyacyl-CoA',
+                    'Second dehydrogenation',
+                    'Thiolysis to acetyl-CoA',
+                    'Repeat cycle for chain shortening'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Mitochondrial matrix',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Lipid Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_414',
+                name: 'Fatty Acid Synthesis',
+                reactants: ['Acetyl-CoA', 'NADPH', 'ATP'],
+                reagents: ['Acetyl-CoA carboxylase', 'Fatty acid synthase'],
+                products: ['Fatty acid', 'CoA', 'NADP+', 'ADP'],
+                mechanism: [
+                    'Carboxylation of acetyl-CoA',
+                    'Condensation with malonyl-CoA',
+                    'Reduction and dehydration cycles',
+                    'Elongation to full chain',
+                    'Termination and release'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Lipid Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_415',
+                name: 'Peptide Bond Formation',
+                reactants: ['Amino acid', 'Amino acid', 'ATP'],
+                reagents: ['Ribosome', 'tRNA', 'Aminoacyl-tRNA synthetase'],
+                products: ['Dipeptide', 'AMP', 'PPi'],
+                mechanism: [
+                    'Amino acid activation to aminoacyl-AMP',
+                    'Transfer to tRNA',
+                    'Peptidyl transferase catalysis',
+                    'Nucleophilic attack on carbonyl',
+                    'Peptide bond formation'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ribosomal environment',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Protein Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_416',
+                name: 'Proteolysis',
+                reactants: ['Protein'],
+                reagents: ['Protease enzymes'],
+                products: ['Amino acids'],
+                mechanism: [
+                    'Enzyme-substrate complex formation',
+                    'Nucleophilic attack on peptide bond',
+                    'Tetrahedral intermediate',
+                    'Bond cleavage and product release',
+                    'Hydrolysis of peptide bonds'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Aqueous',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Protein Degradation',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_417',
+                name: 'Transamination',
+                reactants: ['Amino acid', 'Alpha-keto acid'],
+                reagents: ['Transaminase', 'PLP'],
+                products: ['New amino acid', 'New alpha-keto acid'],
+                mechanism: [
+                    'PLP forms Schiff base with amino acid',
+                    'Proton abstraction',
+                    'Electron rearrangement',
+                    'New Schiff base formation',
+                    'Hydrolysis to products'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Amino Acid Metabolism',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_418',
+                name: 'Deamination',
+                reactants: ['Amino acid', 'NAD+', 'H2O'],
+                reagents: ['Deaminase enzymes'],
+                products: ['Alpha-keto acid', 'NH3', 'NADH'],
+                mechanism: [
+                    'PLP-dependent or oxidative',
+                    'Removal of amino group',
+                    'Formation of imine intermediate',
+                    'Hydrolysis to keto acid and ammonia',
+                    'Redox cofactor reduction'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Mitochondria',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Amino Acid Metabolism',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_419',
+                name: 'Allosteric Regulation',
+                reactants: ['Enzyme', 'Effector molecule'],
+                reagents: [],
+                products: ['Enzyme-effector complex'],
+                mechanism: [
+                    'Effector binding to allosteric site',
+                    'Conformational change',
+                    'Active site modification',
+                    'Activity modulation',
+                    'Feedback inhibition or activation'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cellular environment',
+                    time: 'Instantaneous',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Enzyme Regulation',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_420',
+                name: 'DNA Replication',
+                reactants: ['DNA template', 'dNTPs', 'Primers'],
+                reagents: ['DNA polymerase', 'Helicase', 'Primase'],
+                products: ['DNA duplex'],
+                mechanism: [
+                    'Helicase unwinds DNA',
+                    'Primase synthesizes RNA primer',
+                    'DNA polymerase extends primer',
+                    'Leading and lagging strand synthesis',
+                    'Ligase joins fragments'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Nucleus',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'DNA Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_421',
+                name: 'Transcription',
+                reactants: ['DNA template', 'NTPs'],
+                reagents: ['RNA polymerase', 'Transcription factors'],
+                products: ['mRNA', 'PPi'],
+                mechanism: [
+                    'RNA polymerase binding to promoter',
+                    'Initiation complex formation',
+                    'Elongation along template',
+                    'Termination and release',
+                    'RNA processing'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Nucleus',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Gene Expression',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_422',
+                name: 'Translation',
+                reactants: ['mRNA', 'Aminoacyl-tRNAs', 'Ribosome'],
+                reagents: ['Initiation factors', 'Elongation factors'],
+                products: ['Protein', 'tRNAs'],
+                mechanism: [
+                    'Initiation complex formation',
+                    'Codon-anticodon recognition',
+                    'Peptide bond formation',
+                    'Translocation and elongation',
+                    'Termination and release'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Protein Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_423',
+                name: 'DNA Repair Reactions',
+                reactants: ['Damaged DNA', 'Repair enzymes'],
+                reagents: ['ATP', 'NAD+'],
+                products: ['Repaired DNA'],
+                mechanism: [
+                    'Damage recognition',
+                    'Excision of damaged base',
+                    'Gap filling by polymerase',
+                    'Ligation of strands',
+                    'Various repair pathways'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Nucleus',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'DNA Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_424',
+                name: 'Genetic Recombination',
+                reactants: ['DNA strands'],
+                reagents: ['Recombinase enzymes'],
+                products: ['Recombinant DNA'],
+                mechanism: [
+                    'Strand exchange',
+                    'Holliday junction formation',
+                    'Branch migration',
+                    'Resolution of junctions',
+                    'Genetic material exchange'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Nucleus',
+                    time: 'Variable',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Genetic Processes',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_425',
+                name: 'Photosynthesis Light Reactions',
+                reactants: ['H2O', 'Light energy'],
+                reagents: ['Photosystems', 'Electron carriers'],
+                products: ['O2', 'ATP', 'NADPH'],
+                mechanism: [
+                    'Light absorption by chlorophyll',
+                    'Electron excitation and transfer',
+                    'Water oxidation to oxygen',
+                    'Proton gradient formation',
+                    'ATP and NADPH synthesis'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Thylakoid membrane',
+                    time: 'Continuous',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Photosynthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_426',
+                name: 'Calvin Cycle',
+                reactants: ['CO2', 'ATP', 'NADPH'],
+                reagents: ['Rubisco', 'Other enzymes'],
+                products: ['Glucose', 'ADP', 'NADP+'],
+                mechanism: [
+                    'CO2 fixation by Rubisco',
+                    'Reduction phase',
+                    'Regeneration of RuBP',
+                    'Sugar production',
+                    'Carbon assimilation'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Chloroplast stroma',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Photosynthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_427',
+                name: 'Urea Cycle',
+                reactants: ['NH4+', 'HCO3-', 'Aspartate', 'ATP'],
+                reagents: ['Enzymes of urea cycle'],
+                products: ['Urea', 'Fumarate', 'ADP', 'AMP'],
+                mechanism: [
+                    'Ammonia and bicarbonate activation',
+                    'Carbamoyl phosphate formation',
+                    'Citrulline synthesis',
+                    'Argininosuccinate formation',
+                    'Urea release and regeneration'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Liver mitochondria/cytosol',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '85',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Nitrogen Metabolism',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_428',
+                name: 'Cholesterol Biosynthesis',
+                reactants: ['Acetyl-CoA', 'NADPH'],
+                reagents: ['HMG-CoA reductase', 'Squalene synthase'],
+                products: ['Cholesterol'],
+                mechanism: [
+                    'Mevalonate pathway',
+                    'Isoprenoid units formation',
+                    'Squalene cyclization',
+                    'Lanosterol to cholesterol',
+                    'Steroid ring system'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Endoplasmic reticulum',
+                    time: 'Variable',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Steroid Biosynthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_429',
+                name: 'Glycogenesis',
+                reactants: ['Glucose-1-phosphate', 'UTP', 'Glycogen primer'],
+                reagents: ['Glycogen synthase', 'Branching enzyme'],
+                products: ['Glycogen', 'UDP', 'Pi'],
+                mechanism: [
+                    'Glucose activation to UDP-glucose',
+                    'Transfer to glycogen chain',
+                    'Alpha-1,4 linkages',
+                    'Branching for structure',
+                    'Storage polysaccharide'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'minutes'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Carbohydrate Metabolism',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_430',
+                name: 'Glycogenolysis',
+                reactants: ['Glycogen', 'Pi'],
+                reagents: ['Glycogen phosphorylase', 'Debranching enzyme'],
+                products: ['Glucose-1-phosphate', 'Glucose'],
+                mechanism: [
+                    'Phosphorolysis of alpha-1,4 bonds',
+                    'Glucose-1-phosphate release',
+                    'Debranching for alpha-1,6 bonds',
+                    'Glucose production',
+                    'Energy mobilization'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytosol',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Carbohydrate Metabolism',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_431',
+                name: 'Phosphorylation/Dephosphorylation',
+                reactants: ['Protein-OH', 'ATP'],
+                reagents: ['Kinase', 'Phosphatase'],
+                products: ['Protein-OPO3^2-', 'ADP'],
+                mechanism: [
+                    'ATP binding to kinase',
+                    'Nucleophilic attack by protein',
+                    'Phosphoryl transfer',
+                    'Signal transduction',
+                    'Reversible by phosphatase'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cellular environment',
+                    time: 'Variable',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cell Signaling',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_432',
+                name: 'Second Messenger Reactions',
+                reactants: ['ATP', 'GTP', 'Ca2+ channels'],
+                reagents: ['Adenylyl cyclase', 'Phospholipase C'],
+                products: ['cAMP', 'IP3', 'DAG', 'Ca2+'],
+                mechanism: [
+                    'Receptor activation',
+                    'G-protein signaling',
+                    'Enzyme activation',
+                    'Second messenger production',
+                    'Signal amplification cascade'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Cytoplasm/membrane',
+                    time: 'Rapid',
+                    timeUnit: 'milliseconds'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cell Signaling',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_433',
+                name: 'Polyethylene Synthesis',
+                reactants: ['Ethylene'],
+                reagents: ['Ziegler-Natta catalyst'],
+                products: ['Polyethylene'],
+                mechanism: [
+                    'Ethylene coordination to metal center',
+                    'Insertion into metal-carbon bond',
+                    'Chain propagation',
+                    'Beta-hydride elimination termination',
+                    'High molecular weight polymer'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '10',
+                    pressureUnit: 'atm',
+                    solvent: 'Hexane',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_434',
+                name: 'Polypropylene Synthesis',
+                reactants: ['Propylene'],
+                reagents: ['Ziegler-Natta catalyst'],
+                products: ['Polypropylene'],
+                mechanism: [
+                    'Propylene coordination',
+                    'Stereoselective insertion',
+                    'Isotactic or syndiotactic control',
+                    'Chain growth',
+                    'Termination by transfer'
+                ],
+                conditions: {
+                    temperature: '70',
+                    temperatureUnit: '°C',
+                    pressure: '5',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_435',
+                name: 'Polystyrene Synthesis',
+                reactants: ['Styrene'],
+                reagents: ['AIBN'],
+                products: ['Polystyrene'],
+                mechanism: [
+                    'Initiator decomposition',
+                    'Radical formation',
+                    'Monomer addition',
+                    'Chain propagation',
+                    'Termination by combination'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Beginner',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_436',
+                name: 'PVC Synthesis',
+                reactants: ['Vinyl chloride'],
+                reagents: ['Peroxide initiator'],
+                products: ['Polyvinyl chloride'],
+                mechanism: [
+                    'Radical initiation',
+                    'Vinyl chloride addition',
+                    'Head-to-tail propagation',
+                    'Syndiotactic preference',
+                    'Termination reactions'
+                ],
+                conditions: {
+                    temperature: '50',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water (suspension)',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_437',
+                name: 'Polyacrylonitrile Synthesis',
+                reactants: ['Acrylonitrile'],
+                reagents: ['AIBN'],
+                products: ['Polyacrylonitrile'],
+                mechanism: [
+                    'Radical polymerization',
+                    'Nitrile group influence',
+                    'Chain propagation',
+                    'High Tg polymer',
+                    'Fiber applications'
+                ],
+                conditions: {
+                    temperature: '60',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_438',
+                name: 'Polymethyl Methacrylate Synthesis',
+                reactants: ['Methyl methacrylate'],
+                reagents: ['BPO'],
+                products: ['PMMA'],
+                mechanism: [
+                    'Radical initiation',
+                    'Methacrylate polymerization',
+                    'Steric hindrance effects',
+                    'Transparent polymer',
+                    'Termination'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Bulk',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_439',
+                name: 'Nylon 6,6 Synthesis',
+                reactants: ['Hexamethylenediamine', 'Adipic acid'],
+                reagents: [],
+                products: ['Nylon 6,6'],
+                mechanism: [
+                    'Salt formation',
+                    'Heating to melt',
+                    'Condensation polymerization',
+                    'Water elimination',
+                    'High molecular weight'
+                ],
+                conditions: {
+                    temperature: '280',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_440',
+                name: 'PET Synthesis',
+                reactants: ['Ethylene glycol', 'Terephthalic acid'],
+                reagents: ['Antimony catalyst'],
+                products: ['Polyethylene terephthalate'],
+                mechanism: [
+                    'Transesterification',
+                    'Ester interchange',
+                    'Polycondensation',
+                    'High temperature process',
+                    'Fiber and bottle polymer'
+                ],
+                conditions: {
+                    temperature: '280',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_441',
+                name: 'Polycarbonate Synthesis',
+                reactants: ['Bisphenol A', 'Phosgene'],
+                reagents: ['Base'],
+                products: ['Polycarbonate'],
+                mechanism: [
+                    'Interfacial polymerization',
+                    'Phosgene reaction',
+                    'Carbonate linkage',
+                    'High impact polymer',
+                    'Optical clarity'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Dichloromethane/water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_442',
+                name: 'Polyurethane Synthesis',
+                reactants: ['Diisocyanate', 'Diol'],
+                reagents: ['Catalyst'],
+                products: ['Polyurethane'],
+                mechanism: [
+                    'Urea formation',
+                    'Chain extension',
+                    'Urethane linkages',
+                    'Flexible to rigid foams',
+                    'Addition polymerization'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_443',
+                name: 'Epoxy Resin Synthesis',
+                reactants: ['Bisphenol A diglycidyl ether', 'Amine hardener'],
+                reagents: [],
+                products: ['Cured epoxy'],
+                mechanism: [
+                    'Epoxide ring opening',
+                    'Amine addition',
+                    'Cross-linking',
+                    'Thermoset formation',
+                    'Curing process'
+                ],
+                conditions: {
+                    temperature: '120',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_444',
+                name: 'Silicone Polymer Synthesis',
+                reactants: ['Dimethyldichlorosilane', 'Water'],
+                reagents: ['Base'],
+                products: ['Polydimethylsiloxane'],
+                mechanism: [
+                    'Hydrolysis to silanol',
+                    'Condensation polymerization',
+                    'Siloxane linkages',
+                    'High thermal stability',
+                    'Flexible polymer'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_445',
+                name: 'Polyethylene Glycol Synthesis',
+                reactants: ['Ethylene oxide', 'Water'],
+                reagents: ['Base'],
+                products: ['PEG'],
+                mechanism: [
+                    'Ring-opening polymerization',
+                    'Hydroxide initiation',
+                    'Chain growth',
+                    'Termination by water',
+                    'Water-soluble polymer'
+                ],
+                conditions: {
+                    temperature: '120',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_446',
+                name: 'Polylactic Acid Synthesis',
+                reactants: ['Lactide'],
+                reagents: ['SnOct2'],
+                products: ['PLA'],
+                mechanism: [
+                    'Ring-opening polymerization',
+                    'Tin catalyst',
+                    'Ester linkages',
+                    'Biodegradable polymer',
+                    'Stereocontrol'
+                ],
+                conditions: {
+                    temperature: '130',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_447',
+                name: 'Polybutadiene Synthesis',
+                reactants: ['Butadiene'],
+                reagents: ['n-BuLi'],
+                products: ['Polybutadiene'],
+                mechanism: [
+                    'Anionic polymerization',
+                    '1,4-addition preferred',
+                    'Living polymerization',
+                    'High cis content',
+                    'Elastomer'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Hexane',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_448',
+                name: 'Polyisoprene Synthesis',
+                reactants: ['Isoprene'],
+                reagents: ['Ziegler-Natta catalyst'],
+                products: ['Polyisoprene'],
+                mechanism: [
+                    'Coordination polymerization',
+                    '1,4-polymerization',
+                    'Natural rubber mimic',
+                    'Stereoregular polymer',
+                    'Elastomeric properties'
+                ],
+                conditions: {
+                    temperature: '50',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_449',
+                name: 'Polytetrafluoroethylene Synthesis',
+                reactants: ['Tetrafluoroethylene'],
+                reagents: ['Peroxide'],
+                products: ['PTFE'],
+                mechanism: [
+                    'Radical polymerization',
+                    'High pressure process',
+                    'Chain transfer',
+                    'High melting polymer',
+                    'Non-stick properties'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '20',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_450',
+                name: 'Polyacrylamide Synthesis',
+                reactants: ['Acrylamide'],
+                reagents: ['AIBN'],
+                products: ['Polyacrylamide'],
+                mechanism: [
+                    'Free radical polymerization',
+                    'Water-soluble polymer',
+                    'High molecular weight',
+                    'Gel formation',
+                    'Industrial applications'
+                ],
+                conditions: {
+                    temperature: '60',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_451',
+                name: 'Styrene-Butadiene Copolymer Synthesis',
+                reactants: ['Styrene', 'Butadiene'],
+                reagents: ['AIBN'],
+                products: ['SBR'],
+                mechanism: [
+                    'Free radical copolymerization',
+                    'Random copolymer',
+                    'Elastomeric properties',
+                    'Tire applications',
+                    'Alternating tendencies'
+                ],
+                conditions: {
+                    temperature: '50',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Emulsion',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_452',
+                name: 'Block Copolymer Synthesis',
+                reactants: ['Styrene', 'Methyl methacrylate'],
+                reagents: ['Living polymerization initiator'],
+                products: ['PS-b-PMMA'],
+                mechanism: [
+                    'Sequential monomer addition',
+                    'Living polymerization',
+                    'Block formation',
+                    'Phase separation',
+                    'Self-assembly'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_453',
+                name: 'Graft Polymer Synthesis',
+                reactants: ['Polyethylene backbone', 'Styrene'],
+                reagents: ['Peroxide'],
+                products: ['Graft copolymer'],
+                mechanism: [
+                    'Backbone radical formation',
+                    'Monomer grafting',
+                    'Branch formation',
+                    'Surface modification',
+                    'Compatibilization'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_454',
+                name: 'Dendrimer Synthesis',
+                reactants: ['Core molecule', 'Branching monomers'],
+                reagents: ['Coupling agents'],
+                products: ['Dendrimer'],
+                mechanism: [
+                    'Divergent growth',
+                    'Layer-by-layer synthesis',
+                    'Perfect branching',
+                    'Nanoscale architecture',
+                    'Controlled molecular weight'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: 'Variable',
+                    timeUnit: 'days'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_455',
+                name: 'Hyperbranched Polymer Synthesis',
+                reactants: ['AB2 monomer'],
+                reagents: ['Catalyst'],
+                products: ['Hyperbranched polymer'],
+                mechanism: [
+                    'One-pot synthesis',
+                    'Statistical branching',
+                    'High functionality',
+                    'Defect structures',
+                    'Easy synthesis'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_456',
+                name: 'Supramolecular Polymer Synthesis',
+                reactants: ['Monomeric units'],
+                reagents: ['Non-covalent interactions'],
+                products: ['Supramolecular polymer'],
+                mechanism: [
+                    'Hydrogen bonding',
+                    'Host-guest complexes',
+                    'Self-assembly',
+                    'Reversible polymerization',
+                    'Dynamic systems'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Organic solvent',
+                    time: 'Instantaneous',
+                    timeUnit: 'seconds'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_457',
+                name: 'Enzymatic Polymerization',
+                reactants: ['Sugar nucleotides', 'Primer'],
+                reagents: ['Glycosyltransferase'],
+                products: ['Polysaccharides'],
+                mechanism: [
+                    'Enzyme catalysis',
+                    'Regioselective coupling',
+                    'Stereocontrol',
+                    'Natural product synthesis',
+                    'High specificity'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Aqueous buffer',
+                    time: 'Variable',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '90',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Polymer Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_458',
+                name: 'Friedel-Crafts Alkylation',
+                reactants: ['Aromatic compound', 'Alkyl halide'],
+                reagents: ['AlCl3'],
+                products: ['Alkylarene', 'HCl'],
+                mechanism: [
+                    'Lewis acid complexation',
+                    'Carbocation formation',
+                    'Electrophilic aromatic substitution',
+                    'Rearrangement possible',
+                    'Regioselectivity control'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Substitution',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_459',
+                name: 'Friedel-Crafts Acylation',
+                reactants: ['Aromatic compound', 'Acid chloride'],
+                reagents: ['AlCl3'],
+                products: ['Ketone', 'HCl'],
+                mechanism: [
+                    'Acyl cation formation',
+                    'Electrophilic attack',
+                    'Ortho-para directing',
+                    'No polyalkylation',
+                    'Synthetic versatility'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Substitution',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_460',
+                name: 'Grignard Reaction',
+                reactants: ['Alkyl halide', 'Carbonyl compound'],
+                reagents: ['Mg', 'Ether'],
+                products: ['Alcohol'],
+                mechanism: [
+                    'Organomagnesium formation',
+                    'Nucleophilic addition',
+                    'Tetrahedral alkoxide',
+                    'Protonation',
+                    'Carbon-carbon bond formation'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Diethyl ether',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Organometallic Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_461',
+                name: 'Diels-Alder Reaction',
+                reactants: ['Diene', 'Dienophile'],
+                reagents: [],
+                products: ['Cyclohexene'],
+                mechanism: [
+                    'Concerted cycloaddition',
+                    'Suprafacial addition',
+                    'Stereospecific reaction',
+                    'Aromatic transition state',
+                    'Pericyclic reaction'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '24',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cycloaddition',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_462',
+                name: 'Wittig Reaction',
+                reactants: ['Aldehyde', 'Phosphorus ylide'],
+                reagents: [],
+                products: ['Alkene', 'Triphenylphosphine oxide'],
+                mechanism: [
+                    'Betaine formation',
+                    'Oxaphosphetane intermediate',
+                    'Syn elimination',
+                    'E/Z selectivity',
+                    'Carbonyl olefination'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_463',
+                name: 'Aldol Condensation',
+                reactants: ['Aldehyde', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alpha,beta-unsaturated carbonyl'],
+                mechanism: [
+                    'Enolate formation',
+                    'Nucleophilic addition',
+                    'Dehydration',
+                    'Conjugated system',
+                    'Thermodynamic product'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '92',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Carbonyl Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_464',
+                name: 'Cannizzaro Reaction',
+                reactants: ['Aldehyde', 'Aldehyde'],
+                reagents: ['NaOH'],
+                products: ['Alcohol', 'Carboxylate'],
+                mechanism: [
+                    'Hydride transfer',
+                    'No alpha-hydrogen required',
+                    'Oxidation-reduction',
+                    'Disproportionation',
+                    'Aromatic aldehydes'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Redox Reactions',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_465',
+                name: 'Perkin Reaction',
+                reactants: ['Aromatic aldehyde', 'Acetic anhydride'],
+                reagents: ['Sodium acetate'],
+                products: ['Cinnamic acid derivative'],
+                mechanism: [
+                    'Mixed anhydride formation',
+                    'Carbanion addition',
+                    'Elimination',
+                    'Alpha,beta-unsaturated acid',
+                    'Aromatic substitution'
+                ],
+                conditions: {
+                    temperature: '180',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Condensation Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_466',
+                name: 'Claisen Condensation',
+                reactants: ['Ester', 'Ester'],
+                reagents: ['Base'],
+                products: ['Beta-keto ester'],
+                mechanism: [
+                    'Enolate formation',
+                    'Acyl substitution',
+                    'Tetrahedral intermediate',
+                    'Elimination',
+                    'Carbon-carbon bond'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '83',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Carbonyl Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_467',
+                name: 'Michael Addition',
+                reactants: ['Alpha,beta-unsaturated carbonyl', 'Nucleophile'],
+                reagents: [],
+                products: ['1,5-Dicarbonyl compound'],
+                mechanism: [
+                    'Conjugate addition',
+                    'Nucleophile attack',
+                    'Enolate stabilization',
+                    '1,5-Relationship',
+                    'Carbon nucleophiles'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Methanol',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Conjugate Addition',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_468',
+                name: 'Robinson Annulation',
+                reactants: ['Cyclohexanone', 'Methyl vinyl ketone'],
+                reagents: ['Base'],
+                products: ['Decalone'],
+                mechanism: [
+                    'Michael addition',
+                    'Aldol condensation',
+                    'Ring formation',
+                    'Bicyclic system',
+                    'Steroid synthesis'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '24',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Ring Formation',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_469',
+                name: 'Reformatsky Reaction',
+                reactants: ['Alpha-halo ester', 'Aldehyde'],
+                reagents: ['Zn'],
+                products: ['Beta-hydroxy ester'],
+                mechanism: [
+                    'Zinc insertion',
+                    'Reformatsky reagent',
+                    'Nucleophilic addition',
+                    'Beta-hydroxy ester',
+                    'Carbonyl addition'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Benzene',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '87',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Organometallic Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_470',
+                name: 'Pinacol Rearrangement',
+                reactants: ['1,2-Diol'],
+                reagents: ['Acid'],
+                products: ['Carbonyl compound'],
+                mechanism: [
+                    'Carbocation formation',
+                    '1,2-Methyl shift',
+                    'Ring expansion possible',
+                    'Carbonyl formation',
+                    'Rearrangement reaction'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '92',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_471',
+                name: 'Beckmann Rearrangement',
+                reactants: ['Oxime'],
+                reagents: ['Acid'],
+                products: ['Amide'],
+                mechanism: [
+                    'Protonation of OH',
+                    'Migration of group',
+                    'Loss of water',
+                    'Amide formation',
+                    'Lactam synthesis'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_472',
+                name: 'Hofmann Rearrangement',
+                reactants: ['Amide'],
+                reagents: ['Br2', 'NaOH'],
+                products: ['Amine'],
+                mechanism: [
+                    'N-Bromoamide formation',
+                    'Rearrangement',
+                    'Isocyanate intermediate',
+                    'Amine formation',
+                    'Chain shortening'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '68',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_473',
+                name: 'Curtius Rearrangement',
+                reactants: ['Acyl azide'],
+                reagents: ['Heat'],
+                products: ['Isocyanate'],
+                mechanism: [
+                    'Loss of nitrogen',
+                    'Migration of group',
+                    'Isocyanate formation',
+                    'Amine synthesis',
+                    'Rearrangement'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '78',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_474',
+                name: 'Schmidt Reaction',
+                reactants: ['Carboxylic acid', 'Hydrazoic acid'],
+                reagents: ['H2SO4'],
+                products: ['Amine'],
+                mechanism: [
+                    'Acyl azide formation',
+                    'Rearrangement',
+                    'Loss of nitrogen',
+                    'Amine formation',
+                    'Ring expansion'
+                ],
+                conditions: {
+                    temperature: '60',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Chloroform',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '58',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_475',
+                name: 'Lossen Rearrangement',
+                reactants: ['Hydroxamic acid'],
+                reagents: ['Base'],
+                products: ['Isocyanate'],
+                mechanism: [
+                    'O-Acylation',
+                    'Rearrangement',
+                    'Isocyanate formation',
+                    'Amine synthesis',
+                    'Hydrolysis'
+                ],
+                conditions: {
+                    temperature: '50',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_476',
+                name: 'Baeyer-Villiger Oxidation',
+                reactants: ['Ketone'],
+                reagents: ['Peracid'],
+                products: ['Ester'],
+                mechanism: [
+                    'Nucleophilic addition',
+                    'Migration of group',
+                    'Loss of carboxylic acid',
+                    'Ester formation',
+                    'Regioselectivity'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Oxidation Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_477',
+                name: 'Sharpless Asymmetric Epoxidation',
+                reactants: ['Allyl alcohol'],
+                reagents: ['Ti(OiPr)4', 'TBHP', 'Tartrate'],
+                products: ['Epoxy alcohol'],
+                mechanism: [
+                    'Titanium-tartrate complex',
+                    'Hydroperoxide activation',
+                    'Asymmetric oxygen transfer',
+                    'High enantioselectivity',
+                    'Kinetic resolution'
+                ],
+                conditions: {
+                    temperature: '-20',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Asymmetric Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_478',
+                name: 'Heck Reaction',
+                reactants: ['Aryl halide', 'Alkene'],
+                reagents: ['Pd catalyst', 'Base'],
+                products: ['Styryl arene'],
+                mechanism: [
+                    'Oxidative addition',
+                    'Alkene coordination',
+                    'Migratory insertion',
+                    'Beta-hydride elimination',
+                    'Reductive elimination'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cross-Coupling',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_479',
+                name: 'Suzuki Coupling',
+                reactants: ['Aryl halide', 'Aryl boronic acid'],
+                reagents: ['Pd catalyst', 'Base'],
+                products: ['Biaryl'],
+                mechanism: [
+                    'Oxidative addition',
+                    'Transmetalation',
+                    'Reductive elimination',
+                    'Carbon-carbon bond',
+                    'Tetravalent boron'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '85',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cross-Coupling',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_480',
+                name: 'Stille Coupling',
+                reactants: ['Aryl halide', 'Aryl stannane'],
+                reagents: ['Pd catalyst'],
+                products: ['Biaryl'],
+                mechanism: [
+                    'Oxidative addition',
+                    'Transmetalation',
+                    'Reductive elimination',
+                    'Organotin reagent',
+                    'Toxic byproducts'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Cross-Coupling',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_481',
+                name: 'Sonogashira Coupling',
+                reactants: ['Aryl halide', 'Terminal alkyne'],
+                reagents: ['Pd catalyst', 'CuI', 'Base'],
+                products: ['Aryl alkyne'],
+                mechanism: [
+                    'Oxidative addition',
+                    'Copper acetylide formation',
+                    'Transmetalation',
+                    'Reductive elimination',
+                    'Alkyne coupling'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cross-Coupling',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_482',
+                name: 'Buchwald-Hartwig Amination',
+                reactants: ['Aryl halide', 'Amine'],
+                reagents: ['Pd catalyst', 'Ligand', 'Base'],
+                products: ['Aryl amine'],
+                mechanism: [
+                    'Oxidative addition',
+                    'Amine coordination',
+                    'Deprotonation',
+                    'Reductive elimination',
+                    'C-N bond formation'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cross-Coupling',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_483',
+                name: 'Click Chemistry - CuAAC',
+                reactants: ['Azide', 'Terminal alkyne'],
+                reagents: ['Cu(I) catalyst'],
+                products: ['1,2,3-Triazole'],
+                mechanism: [
+                    'Copper acetylide formation',
+                    'Azide coordination',
+                    'Cycloaddition',
+                    'Regioselective 1,4-product',
+                    'High yield reaction'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Click Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_484',
+                name: 'Gabriel Synthesis',
+                reactants: ['Alkyl halide', 'Phthalimide'],
+                reagents: ['Base'],
+                products: ['Primary amine'],
+                mechanism: [
+                    'Nucleophilic substitution',
+                    'Phthaloyl protection',
+                    'Hydrazinolysis',
+                    'Amine deprotection',
+                    'No over-alkylation'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '68',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Amine Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_485',
+                name: 'Sandmeyer Reaction',
+                reactants: ['Diazonium salt'],
+                reagents: ['CuCl', 'HCl'],
+                products: ['Aryl chloride'],
+                mechanism: [
+                    'Diazonium decomposition',
+                    'Copper(I) chloride complex',
+                    'Chlorine radical transfer',
+                    'Nitrogen evolution',
+                    'Aryl halide formation'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '65',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Substitution',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_486',
+                name: 'Gattermann Reaction',
+                reactants: ['Diazonium salt'],
+                reagents: ['CuCl', 'HCl'],
+                products: ['Aryl chloride'],
+                mechanism: [
+                    'Similar to Sandmeyer',
+                    'Copper(I) catalysis',
+                    'Chloride introduction',
+                    'Milder conditions',
+                    'Alternative method'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '60',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Substitution',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_487',
+                name: 'Kolbe Electrolysis',
+                reactants: ['Carboxylate salt'],
+                reagents: ['Electricity'],
+                products: ['Alkane', 'CO2'],
+                mechanism: [
+                    'Anode oxidation',
+                    'Carboxylate radical',
+                    'Decarboxylation',
+                    'Radical coupling',
+                    'Alkane formation'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '50',
+                    atomEconomy: '45',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Electrolysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_488',
+                name: 'Wurtz Reaction',
+                reactants: ['Alkyl halide', 'Alkyl halide'],
+                reagents: ['Na'],
+                products: ['Alkane'],
+                mechanism: [
+                    'Sodium reduction',
+                    'Alkyl radical formation',
+                    'Radical coupling',
+                    'Symmetrical alkane',
+                    'Limited scope'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '67',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Alkane Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_489',
+                name: 'Fittig Reaction',
+                reactants: ['Aryl halide', 'Aryl halide'],
+                reagents: ['Na'],
+                products: ['Biaryl'],
+                mechanism: [
+                    'Aryl radical formation',
+                    'Coupling reaction',
+                    'Symmetrical biaryl',
+                    'Harsh conditions',
+                    'Limited substrates'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_490',
+                name: 'Ullmann Reaction',
+                reactants: ['Aryl halide', 'Phenoxide'],
+                reagents: ['Cu'],
+                products: ['Diphenyl ether'],
+                mechanism: [
+                    'Copper mediation',
+                    'Aryl-oxygen bond formation',
+                    'High temperature required',
+                    'Limited scope',
+                    'Copper bronze'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Aromatic Coupling',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_491',
+                name: 'Finkelstein Reaction',
+                reactants: ['Alkyl halide', 'NaI'],
+                reagents: [],
+                products: ['Alkyl iodide', 'NaCl'],
+                mechanism: [
+                    'Iodide nucleophile',
+                    'SN2 displacement',
+                    'Solubility effect',
+                    'Acetone solvent',
+                    'Halide exchange'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetone',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Nucleophilic Substitution',
+                difficulty: 'Beginner',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_492',
+                name: 'Swarts Reaction',
+                reactants: ['Alkyl chloride', 'AgF'],
+                reagents: [],
+                products: ['Alkyl fluoride', 'AgCl'],
+                mechanism: [
+                    'Fluoride exchange',
+                    'Silver fluoride reagent',
+                    'Dry conditions',
+                    'Alkyl fluorides',
+                    'Toxic reagents'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Nucleophilic Substitution',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_493',
+                name: 'Williamson Ether Synthesis',
+                reactants: ['Alkyl halide', 'Alkoxide'],
+                reagents: [],
+                products: ['Ether', 'Halide salt'],
+                mechanism: [
+                    'SN2 reaction',
+                    'Alkoxide nucleophile',
+                    'Ether formation',
+                    'Symmetrical ethers',
+                    'Base-sensitive'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Ether Synthesis',
+                difficulty: 'Beginner',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_494',
+                name: 'Acetylide Formation',
+                reactants: ['Terminal alkyne', 'Base'],
+                reagents: ['NaNH2 or n-BuLi'],
+                products: ['Acetylide anion'],
+                mechanism: [
+                    'Acid-base reaction',
+                    'Terminal hydrogen removal',
+                    'Nucleophilic carbon',
+                    'Alkylation possible',
+                    'Strong base required'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Alkyne Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_495',
+                name: 'Corey-Fuchs Reaction',
+                reactants: ['Aldehyde', 'CBr4', 'PPh3'],
+                reagents: [],
+                products: ['Dibromoalkene'],
+                mechanism: [
+                    'Phosphorus ylide formation',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Geminal dibromide',
+                    'Alkyne precursor'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '67',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Homologation',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_496',
+                name: 'Shapiro Reaction',
+                reactants: ['Tosylhydrazone', 'Base'],
+                reagents: ['Strong base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Diazene formation',
+                    'Nitrogen elimination',
+                    'Carbanion intermediate',
+                    'Protonation',
+                    'Less substituted alkene'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Elimination Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_497',
+                name: 'Bamford-Stevens Reaction',
+                reactants: ['Tosylhydrazone', 'Base'],
+                reagents: ['Collidine'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Carbene or carbanion',
+                    'Depending on conditions',
+                    'Alkene formation',
+                    'Mixture possible',
+                    'Thermal reaction'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Glycol',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Elimination Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_498',
+                name: 'McMurry Coupling',
+                reactants: ['Aldehyde', 'Aldehyde'],
+                reagents: ['TiCl3', 'Zn(Cu)'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Low-valent titanium',
+                    'Pinacol intermediate',
+                    'Deoxygenation',
+                    'Alkene formation',
+                    'Reductive coupling'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '67',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Carbonyl Coupling',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_499',
+                name: 'Julia Olefination',
+                reactants: ['Sulfone', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Sulfone anion formation',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Stereoselective',
+                    'E/Z control'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_500',
+                name: 'Peterson Olefination',
+                reactants: ['Alpha-silyl alcohol', 'Electrophile'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Beta-elimination',
+                    'Silicon beta-effect',
+                    'Alkene formation',
+                    'Stereoselective',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_501',
+                name: 'Tebbe Olefination',
+                reactants: ['Carbonyl compound'],
+                reagents: ['Cp2TiCH2ClAlMe2'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Titanocene methylidene',
+                    'Wittig-like reaction',
+                    'Methylenation',
+                    'Terminal alkenes',
+                    'Schrock-type'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_502',
+                name: 'Lombardo Olefination',
+                reactants: ['Aldehyde', 'CHBr3'],
+                reagents: ['CrCl2'],
+                products: ['Dibromoalkene'],
+                mechanism: [
+                    'Chromium(II) reagent',
+                    'Geminal tribromide',
+                    'Dibromoalkene formation',
+                    'Corey-Fuchs variant',
+                    'Alkyne precursor'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_503',
+                name: 'Fukuyama Olefination',
+                reactants: ['Thioacetal', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Thioacetal anion',
+                    'Addition-elimination',
+                    'Stereoselective',
+                    'Mild conditions',
+                    'Functional group tolerant'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_504',
+                name: 'Stork Enamine Reaction',
+                reactants: ['Enamine', 'Electrophile'],
+                reagents: [],
+                products: ['Alkylated carbonyl'],
+                mechanism: [
+                    'Enamine formation',
+                    'Nucleophilic addition',
+                    'Hydrolysis',
+                    'Regioselective alkylation',
+                    'Carbonyl protection'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Enamine Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_505',
+                name: 'Mukaiyama Aldol Reaction',
+                reactants: ['Silyl enol ether', 'Aldehyde'],
+                reagents: ['TiCl4'],
+                products: ['Beta-hydroxy carbonyl'],
+                mechanism: [
+                    'Lewis acid activation',
+                    'Mukaiyama reagent',
+                    'Carbonyl addition',
+                    'Stereocontrol possible',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Aldol Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_506',
+                name: 'Evans Aldol Reaction',
+                reactants: ['Boron enolate', 'Aldehyde'],
+                reagents: ['Chiral auxiliary'],
+                products: ['Aldol product'],
+                mechanism: [
+                    'Chiral boron reagent',
+                    'Asymmetric induction',
+                    'High diastereoselectivity',
+                    'Auxiliary removal',
+                    'Stereocontrolled synthesis'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Asymmetric Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_507',
+                name: 'MacMillan Aldol Reaction',
+                reactants: ['Enal', 'Aldehyde'],
+                reagents: ['Imidazolidinone catalyst'],
+                products: ['Beta-hydroxy aldehyde'],
+                mechanism: [
+                    'Organocatalytic activation',
+                    'Enamine catalysis',
+                    'Asymmetric aldol',
+                    'High enantioselectivity',
+                    'Secondary amine catalyst'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_508',
+                name: 'Hajos-Parrish Reaction',
+                reactants: ['Triketone'],
+                reagents: ['Proline'],
+                products: ['Wieland-Miescher ketone'],
+                mechanism: [
+                    'Proline catalysis',
+                    'Intramolecular aldol',
+                    'Enantioselective',
+                    'Robinson annulation',
+                    'Bicyclic product'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '48',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_509',
+                name: 'Mitsunobu Reaction',
+                reactants: ['Alcohol', 'Nucleophile'],
+                reagents: ['DEAD', 'PPh3'],
+                products: ['Inversion product'],
+                mechanism: [
+                    'Betaine formation',
+                    'Alkoxyphosphonium salt',
+                    'Nucleophilic attack',
+                    'Stereoinversion',
+                    'Redox process'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Nucleophilic Substitution',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_510',
+                name: 'Appel Reaction',
+                reactants: ['Alcohol', 'CCl4'],
+                reagents: ['PPh3'],
+                products: ['Alkyl chloride'],
+                mechanism: [
+                    'Phosphine attacks CCl4',
+                    'Chlorophosphonium intermediate',
+                    'Alcohol attacks',
+                    'Chloride displacement',
+                    'Mild chlorination'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Halogenation',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_511',
+                name: 'Staudinger Reaction',
+                reactants: ['Azide', 'Phosphine'],
+                reagents: [],
+                products: ['Iminophosphorane'],
+                mechanism: [
+                    'Nucleophilic attack',
+                    'Triazaphosphole intermediate',
+                    'Nitrogen elimination',
+                    'Phosphorus-nitrogen bond',
+                    'Azide reduction'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Azide Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_512',
+                name: 'Ugi Reaction',
+                reactants: ['Aldehyde', 'Amine', 'Carboxylic acid', 'Isocyanide'],
+                reagents: [],
+                products: ['Alpha-acylamino amide'],
+                mechanism: [
+                    'Four-component reaction',
+                    'Imine formation',
+                    'Isocyanide addition',
+                    'Mumm rearrangement',
+                    'Peptide-like product'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Methanol',
+                    time: '24',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Multicomponent Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_513',
+                name: 'Passerini Reaction',
+                reactants: ['Aldehyde', 'Carboxylic acid', 'Isocyanide'],
+                reagents: [],
+                products: ['Alpha-acyloxy amide'],
+                mechanism: [
+                    'Three-component reaction',
+                    'Isocyanide addition',
+                    'Carboxylic acid addition',
+                    'Alpha-acyloxy amide',
+                    'No catalyst needed'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Multicomponent Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_514',
+                name: 'Biginelli Reaction',
+                reactants: ['Aldehyde', 'Beta-keto ester', 'Urea'],
+                reagents: ['Acid'],
+                products: ['Dihydropyrimidinone'],
+                mechanism: [
+                    'Three-component condensation',
+                    'Acylimine formation',
+                    'Enol addition',
+                    'Cyclization',
+                    'Dehydration'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Multicomponent Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_515',
+                name: 'Paal-Knorr Furan Synthesis',
+                reactants: ['1,4-Dicarbonyl compound'],
+                reagents: ['Acid'],
+                products: ['Furan'],
+                mechanism: [
+                    'Cyclodehydration',
+                    'Enol form cyclization',
+                    'Water elimination',
+                    'Aromatic furan',
+                    'Five-membered heterocycle'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_516',
+                name: 'Knorr Pyrazole Synthesis',
+                reactants: ['Beta-keto ester', 'Hydrazine'],
+                reagents: [],
+                products: ['Pyrazole'],
+                mechanism: [
+                    'Hydrazone formation',
+                    'Cyclization',
+                    'Dehydration',
+                    'Aromatic pyrazole',
+                    'Nitrogen heterocycle'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_517',
+                name: 'Gewald Thiophene Synthesis',
+                reactants: ['Aldehyde', 'Nitrile', 'Sulfur'],
+                reagents: ['Morpholine'],
+                products: ['Thiophene'],
+                mechanism: [
+                    'Knoevenagel condensation',
+                    'Sulfur nucleophile',
+                    'Cyclization',
+                    'Thiophene formation',
+                    'Three-component reaction'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_518',
+                name: 'Hantzsch Dihydropyridine Synthesis',
+                reactants: ['Aldehyde', 'Beta-keto ester', 'Ammonia'],
+                reagents: [],
+                products: ['Dihydropyridine'],
+                mechanism: [
+                    'Three-component reaction',
+                    'Enamine formation',
+                    'Michael addition',
+                    'Cyclization',
+                    'Dihydropyridine'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_519',
+                name: 'Feist-Benary Furan Synthesis',
+                reactants: ['Beta-dicarbonyl', 'Alpha-halo carbonyl'],
+                reagents: ['Base'],
+                products: ['Furan'],
+                mechanism: [
+                    'Knoevenagel condensation',
+                    'Cyclization',
+                    'Dehydration',
+                    'Furan formation',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_520',
+                name: 'Pictet-Spengler Reaction',
+                reactants: ['Tryptamine', 'Aldehyde'],
+                reagents: ['Acid'],
+                products: ['Tetrahydroisoquinoline'],
+                mechanism: [
+                    'Imine formation',
+                    'Electrophilic cyclization',
+                    'Carbocation intermediate',
+                    'Tetrahydroisoquinoline',
+                    'Alkaloid synthesis'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_521',
+                name: 'Bischler-Napieralski Reaction',
+                reactants: ['Beta-arylethylamide'],
+                reagents: ['POCl3'],
+                products: ['3,4-Dihydroisoquinoline'],
+                mechanism: [
+                    'Imine formation',
+                    'Electrophilic cyclization',
+                    'Dehydrogenation',
+                    'Dihydroisoquinoline',
+                    'Isoquinoline precursor'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_522',
+                name: 'Skraup Quinoline Synthesis',
+                reactants: ['Aniline', 'Glycerol', 'Sulfuric acid'],
+                reagents: ['FeSO4'],
+                products: ['Quinoline'],
+                mechanism: [
+                    'Glycerol dehydration',
+                    'Acrolein formation',
+                    'Condensation with aniline',
+                    'Cyclization',
+                    'Quinoline'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_523',
+                name: 'Pechmann Coumarin Synthesis',
+                reactants: ['Phenol', 'Beta-keto ester'],
+                reagents: ['H2SO4'],
+                products: ['Coumarin'],
+                mechanism: [
+                    'Ester condensation',
+                    'Electrophilic substitution',
+                    'Cyclization',
+                    'Lactone formation',
+                    'Coumarin'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_524',
+                name: 'Kostanecki-Robinson Flavone Synthesis',
+                reactants: ['2-Hydroxyacetophenone', 'Benzoyl chloride'],
+                reagents: ['Base'],
+                products: ['Flavone'],
+                mechanism: [
+                    'O-acylation',
+                    'C-acylation',
+                    'Cyclization',
+                    'Dehydration',
+                    'Flavone'
+                ],
+                conditions: {
+                    temperature: '180',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_525',
+                name: 'Allan-Robinson Flavone Synthesis',
+                reactants: ['2-Hydroxyacetophenone', 'Benzoic anhydride'],
+                reagents: ['Base'],
+                products: ['Flavone'],
+                mechanism: [
+                    'Mixed anhydride',
+                    'O-acylation',
+                    'C-acylation',
+                    'Cyclization',
+                    'Flavone'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Pyridine',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_526',
+                name: 'Baker-Venkataraman Rearrangement',
+                reactants: ['2-Acylphenoxy ketone'],
+                reagents: ['Base'],
+                products: ['Flavanone'],
+                mechanism: [
+                    'O-acyl migration',
+                    'Intramolecular transesterification',
+                    'Cyclization',
+                    'Flavanone',
+                    'Flavonoid synthesis'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Pyridine',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_527',
+                name: 'Doebner Reaction',
+                reactants: ['Aldehyde', 'Malonic acid'],
+                reagents: ['Pyridine'],
+                products: ['Cinnamic acid'],
+                mechanism: [
+                    'Knoevenagel condensation',
+                    'Decarboxylation',
+                    'Alpha,beta-unsaturated acid',
+                    'Cinnamic acid derivative',
+                    'One-pot reaction'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Pyridine',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Condensation Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_528',
+                name: 'Pomeranz-Fritsch Isoquinoline Synthesis',
+                reactants: ['Benzylamine', 'Formaldehyde', 'Acetaldehyde'],
+                reagents: ['Acid'],
+                products: ['Isoquinoline'],
+                mechanism: [
+                    'Bis-aminal formation',
+                    'Cyclization',
+                    'Dehydrogenation',
+                    'Isoquinoline',
+                    'Three-component reaction'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_529',
+                name: 'Combes Quinoline Synthesis',
+                reactants: ['Aniline', 'Acetylacetone'],
+                reagents: ['H2SO4'],
+                products: ['Quinoline'],
+                mechanism: [
+                    'Enamine formation',
+                    'Electrophilic cyclization',
+                    'Dehydration',
+                    'Quinoline',
+                    'Two-component reaction'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_530',
+                name: 'Fischer Indole Synthesis',
+                reactants: ['Phenylhydrazine', 'Ketone'],
+                reagents: ['Acid'],
+                products: ['Indole'],
+                mechanism: [
+                    'Hydrazone formation',
+                    'Sigmatropic rearrangement',
+                    'Electrophilic cyclization',
+                    'Indole',
+                    'Classic method'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ethanol',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_531',
+                name: 'Reissert Indole Synthesis',
+                reactants: ['Indole', 'Acid chloride'],
+                reagents: ['DMF'],
+                products: ['3-Acylindole'],
+                mechanism: [
+                    'Vilsmeier-Haack complex',
+                    'Electrophilic substitution',
+                    '3-Position attack',
+                    'Acylindole',
+                    'Regioselective'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_532',
+                name: 'Madelung Indole Synthesis',
+                reactants: ['o-Tolylamide'],
+                reagents: ['NaOH'],
+                products: ['Indole'],
+                mechanism: [
+                    'Strong base',
+                    'Carbanion formation',
+                    'Cyclization',
+                    'Indole',
+                    'Harsh conditions'
+                ],
+                conditions: {
+                    temperature: '300',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '50',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_533',
+                name: 'Bucherer Carbazole Synthesis',
+                reactants: ['Naphthylamine', 'Acetone'],
+                reagents: ['H2SO4'],
+                products: ['Carbazole'],
+                mechanism: [
+                    'Condensation',
+                    'Cyclization',
+                    'Dehydrogenation',
+                    'Carbazole',
+                    'Tricyclic system'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_534',
+                name: 'Graebe-Ullmann Carbazole Synthesis',
+                reactants: ['Diphenylamine derivative'],
+                reagents: ['Cu'],
+                products: ['Carbazole'],
+                mechanism: [
+                    'Cyclization',
+                    'Copper catalysis',
+                    'Dehydrogenation',
+                    'Carbazole formation',
+                    'High temperature'
+                ],
+                conditions: {
+                    temperature: '250',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '55',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_535',
+                name: 'Pschorr Cyclization',
+                reactants: ['Diazonium salt'],
+                reagents: ['CuCl2'],
+                products: ['Phenanthrene'],
+                mechanism: [
+                    'Radical cyclization',
+                    'Copper catalysis',
+                    'Phenanthrene formation',
+                    'Biaryl synthesis',
+                    'Intramolecular'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Cyclization',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_536',
+                name: 'Niementowski Quinazoline Synthesis',
+                reactants: ['Anthranilic acid', 'Formamide'],
+                reagents: [],
+                products: ['Quinazolinone'],
+                mechanism: [
+                    'Condensation',
+                    'Cyclization',
+                    'Quinazolinone formation',
+                    'Fused heterocycle',
+                    'One-pot reaction'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Formamide',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_537',
+                name: 'Traube Purine Synthesis',
+                reactants: ['4-Amino-5-imidazolecarboxamide', 'Formic acid'],
+                reagents: ['Heat'],
+                products: ['Purine'],
+                mechanism: [
+                    'Condensation',
+                    'Cyclization',
+                    'Purine formation',
+                    'Nucleic acid base',
+                    'Biochemical importance'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '60',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_538',
+                name: 'Conrad-Limpach Quinoline Synthesis',
+                reactants: ['Acetoacetic ester', 'Aromatic amine'],
+                reagents: ['HCl'],
+                products: ['Quinoline'],
+                mechanism: [
+                    'Condensation',
+                    'Cyclization',
+                    'Quinoline formation',
+                    'Beta-keto ester',
+                    'Acid-catalyzed'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_539',
+                name: 'Piloty-Robinson Indole Synthesis',
+                reactants: ['Pyrrole', 'Formaldehyde', 'Nitromethane'],
+                reagents: ['NaOH'],
+                products: ['Indole'],
+                mechanism: [
+                    'Condensation',
+                    'Cyclization',
+                    'Indole formation',
+                    'Three-component',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '55',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Low'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_540',
+                name: 'Bartoli Indole Synthesis',
+                reactants: ['Nitroarene', 'Vinyl Grignard'],
+                reagents: [],
+                products: ['Indole'],
+                mechanism: [
+                    'Nucleophilic addition',
+                    'Cyclization',
+                    'Indole formation',
+                    'Grignard reagent',
+                    'Reductive conditions'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Heterocycle Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_541',
+                name: 'Fukuyama Reduction',
+                reactants: ['Thioester'],
+                reagents: ['Pd catalyst', 'H2'],
+                products: ['Aldehyde'],
+                mechanism: [
+                    'Catalytic hydrogenation',
+                    'Selective reduction',
+                    'Aldehyde formation',
+                    'Thioester cleavage',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '75',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Reduction Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_542',
+                name: 'Luche Reduction',
+                reactants: ['Alpha,beta-unsaturated ketone'],
+                reagents: ['NaBH4', 'CeCl3'],
+                products: ['Allylic alcohol'],
+                mechanism: [
+                    'Cerium modification',
+                    '1,2-reduction',
+                    'Allylic alcohol',
+                    'Stereoselective',
+                    'Chelation control'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Methanol',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '78',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Reduction Reactions',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_543',
+                name: 'Denmark Aldol Reaction',
+                reactants: ['Silyl enol ether', 'Aldehyde'],
+                reagents: ['Chiral phosphoramide'],
+                products: ['Aldol product'],
+                mechanism: [
+                    'Lewis base catalysis',
+                    'Silyl transfer',
+                    'Asymmetric aldol',
+                    'High enantioselectivity',
+                    'Organocatalytic'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Asymmetric Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_544',
+                name: 'Aza-Baylis-Hillman Reaction',
+                reactants: ['Imines', 'Activated alkenes'],
+                reagents: ['DABCO'],
+                products: ['Aza-MBH adduct'],
+                mechanism: [
+                    'Nucleophilic catalysis',
+                    'Imine activation',
+                    'Morita-Baylis-Hillman',
+                    'Nitrogen-containing',
+                    'Slow reaction'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMSO',
+                    time: '48',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_545',
+                name: 'Vinylogous Aldol Reaction',
+                reactants: ['Silyloxy diene', 'Aldehyde'],
+                reagents: ['Lewis acid'],
+                products: ['Delta,epsilon-unsaturated carbonyl'],
+                mechanism: [
+                    'Extended enolate',
+                    'Gamma-position attack',
+                    'Conjugated system',
+                    'Vinylogous addition',
+                    'Lewis acid catalysis'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Carbonyl Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_546',
+                name: 'Mukaiyama Michael Addition',
+                reactants: ['Silyl enol ether', 'Alpha,beta-unsaturated carbonyl'],
+                reagents: ['TiCl4'],
+                products: ['1,5-Dicarbonyl'],
+                mechanism: [
+                    'Lewis acid activation',
+                    'Michael addition',
+                    'Silyl enol ether',
+                    '1,5-Dicarbonyl product',
+                    'Carbon-carbon bond'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Michael Addition',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_547',
+                name: 'Organocatalytic Michael Addition',
+                reactants: ['Nucleophile', 'Michael acceptor'],
+                reagents: ['Proline derivative'],
+                products: ['Michael adduct'],
+                mechanism: [
+                    'Enamine catalysis',
+                    'Iminium activation',
+                    'Asymmetric addition',
+                    'Stereocontrol',
+                    'Organocatalyst'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '24',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_548',
+                name: 'Asymmetric Michael Addition',
+                reactants: ['Nucleophile', 'Michael acceptor'],
+                reagents: ['Chiral catalyst'],
+                products: ['Chiral Michael adduct'],
+                mechanism: [
+                    'Chiral metal complex',
+                    'Asymmetric catalysis',
+                    'Enantioselective',
+                    'Stereocontrol',
+                    'High selectivity'
+                ],
+                conditions: {
+                    temperature: '-20',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Asymmetric Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_549',
+                name: 'Vinylcyclopropane Rearrangement',
+                reactants: ['Vinylcyclopropane'],
+                reagents: ['Heat'],
+                products: ['Cyclopentene'],
+                mechanism: [
+                    'Thermal rearrangement',
+                    'Cyclopropane opening',
+                    'Sigmatropic shift',
+                    'Cyclopentene formation',
+                    'Concerted process'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Gas phase',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_550',
+                name: 'Oxy-Cope Rearrangement',
+                reactants: ['1,5-Dien-3-ol'],
+                reagents: ['Heat'],
+                products: ['Delta,epsilon-unsaturated carbonyl'],
+                mechanism: [
+                    'Sigmatropic rearrangement',
+                    'Chair transition state',
+                    'Oxygen acceleration',
+                    'Carbonyl formation',
+                    '[3,3]-Sigmatropic'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_551',
+                name: 'Aza-Cope Rearrangement',
+                reactants: ['1,5-Dien-3-amine'],
+                reagents: ['Heat'],
+                products: ['Rearranged imine'],
+                mechanism: [
+                    'Sigmatropic rearrangement',
+                    'Nitrogen substituent',
+                    'Imine formation',
+                    'Aza variant',
+                    'Thermal process'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_552',
+                name: 'Anionic Oxy-Cope Rearrangement',
+                reactants: ['Allylic alkoxide'],
+                reagents: ['Base'],
+                products: ['Rearranged carbonyl'],
+                mechanism: [
+                    'Alkoxide acceleration',
+                    'Lower temperature',
+                    'Anionic variant',
+                    'Enhanced rate',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_553',
+                name: 'Zwitterionic Aza-Claisen Rearrangement',
+                reactants: ['Allyl imidate'],
+                reagents: ['Heat'],
+                products: ['Rearranged amide'],
+                mechanism: [
+                    'Imidate tautomer',
+                    'Zwitterionic intermediate',
+                    'Sigmatropic shift',
+                    'Amide product',
+                    'Thermal rearrangement'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_554',
+                name: 'Thia-Claisen Rearrangement',
+                reactants: ['Allyl aryl sulfide'],
+                reagents: ['Heat'],
+                products: ['Rearranged sulfide'],
+                mechanism: [
+                    'Sulfur analog',
+                    'Sigmatropic rearrangement',
+                    'Thia variant',
+                    'Sulfur migration',
+                    'Thermal process'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_555',
+                name: 'Aza-Claisen Rearrangement',
+                reactants: ['N-Allyl enamine'],
+                reagents: ['Heat'],
+                products: ['Gamma,delta-unsaturated carbonyl'],
+                mechanism: [
+                    'Nitrogen analog',
+                    'Sigmatropic rearrangement',
+                    'Aza variant',
+                    'Carbonyl product',
+                    'Enamine system'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_556',
+                name: 'Carroll Rearrangement',
+                reactants: ['Allyl acetoacetate'],
+                reagents: ['Heat'],
+                products: ['Gamma,delta-unsaturated ketone'],
+                mechanism: [
+                    'Decarboxylative rearrangement',
+                    'Sigmatropic shift',
+                    'Ketone formation',
+                    'Elimination of CO2',
+                    'Thermal process'
+                ],
+                conditions: {
+                    temperature: '180',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_557',
+                name: 'Eschenmoser-Claisen Rearrangement',
+                reactants: ['Allyl alpha-thioacetamide'],
+                reagents: ['HgCl2'],
+                products: ['Gamma,delta-unsaturated thioamide'],
+                mechanism: [
+                    'Thioamide variant',
+                    'Sigmatropic rearrangement',
+                    'Mild conditions',
+                    'Thioamide product',
+                    'Mercury catalysis'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_558',
+                name: 'Johnson-Claisen Rearrangement',
+                reactants: ['Allyl alcohol', 'Triethyl orthoacetate'],
+                reagents: ['Acid'],
+                products: ['Gamma,delta-unsaturated ester'],
+                mechanism: [
+                    'Orthoester variant',
+                    'Sigmatropic rearrangement',
+                    'Ester formation',
+                    'Johnson modification',
+                    'Acid-catalyzed'
+                ],
+                conditions: {
+                    temperature: '140',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_559',
+                name: 'Orthoester Claisen Rearrangement',
+                reactants: ['Allyl orthoester'],
+                reagents: ['Heat'],
+                products: ['Rearranged ester'],
+                mechanism: [
+                    'Orthoester rearrangement',
+                    'Sigmatropic shift',
+                    'Ester product',
+                    'Claisen variant',
+                    'Thermal process'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_560',
+                name: 'Allyl Vinyl Ether Claisen Rearrangement',
+                reactants: ['Allyl vinyl ether'],
+                reagents: ['Heat'],
+                products: ['Gamma,delta-unsaturated carbonyl'],
+                mechanism: [
+                    'Vinyl ether variant',
+                    'Sigmatropic rearrangement',
+                    'Carbonyl formation',
+                    'Classic Claisen',
+                    'Thermal reaction'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_561',
+                name: 'Silyl Ketene Acetal Claisen Rearrangement',
+                reactants: ['Silyl ketene acetal'],
+                reagents: ['Heat'],
+                products: ['Silylated gamma,delta-unsaturated ester'],
+                mechanism: [
+                    'Ireland variant',
+                    'Silyl stabilization',
+                    'Sigmatropic rearrangement',
+                    'Ester product',
+                    'Stereocontrol'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_562',
+                name: '1,3-Sigmatropic Rearrangement',
+                reactants: ['Allyl system'],
+                reagents: ['Heat'],
+                products: ['Rearranged product'],
+                mechanism: [
+                    'Sigmatropic shift',
+                    '1,3-migration',
+                    'Suprafacial process',
+                    'Stereospecific',
+                    'Thermal reaction'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Pericyclic Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_563',
+                name: '1,5-Sigmatropic Rearrangement',
+                reactants: ['Cyclopentadiene system'],
+                reagents: ['Heat'],
+                products: ['Rearranged diene'],
+                mechanism: [
+                    'Sigmatropic shift',
+                    '1,5-migration',
+                    'Aromatic system',
+                    'Rapid equilibrium',
+                    'Degenerate rearrangement'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '0.1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '100',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Pericyclic Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_564',
+                name: 'Electrocyclic Ring Opening',
+                reactants: ['Cyclobutene'],
+                reagents: ['Heat'],
+                products: ['Butadiene'],
+                mechanism: [
+                    'Conrotatory or disrotatory',
+                    'Ring opening',
+                    'Conjugated system',
+                    'Woodward-Hoffmann rules',
+                    'Stereospecific'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Pericyclic Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_565',
+                name: 'Electrocyclic Ring Closing',
+                reactants: ['Hexatriene'],
+                reagents: ['Heat'],
+                products: ['Cyclohexadiene'],
+                mechanism: [
+                    'Conrotatory or disrotatory',
+                    'Ring closing',
+                    'Cyclic product',
+                    'Stereospecific',
+                    'Pericyclic reaction'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Pericyclic Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_566',
+                name: 'Nazarov Cyclization',
+                reactants: ['Divinyl ketone'],
+                reagents: ['Acid'],
+                products: ['Cyclopentenone'],
+                mechanism: [
+                    'Conjugated system',
+                    'Protonation',
+                    'Electrocyclic closure',
+                    'Cyclopentenone formation',
+                    'Acid-catalyzed'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_567',
+                name: 'Oxyallyl Cation Cyclization',
+                reactants: ['Alpha,alpha\'-dihaloketone'],
+                reagents: ['Base'],
+                products: ['Cyclopentanone'],
+                mechanism: [
+                    'Oxyallyl cation',
+                    'Electrophilic cyclization',
+                    'Cyclopentanone formation',
+                    'Three-carbon synthon',
+                    'Base-induced'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_568',
+                name: 'Bergman Cyclization',
+                reactants: ['Enediyne'],
+                reagents: ['Heat'],
+                products: ['Benzenoid diradical'],
+                mechanism: [
+                    'Enediyne system',
+                    'Cycloaromatization',
+                    'Diradical formation',
+                    'DNA cleavage',
+                    'Antitumor activity'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '24',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_569',
+                name: 'Myers-Saito Cyclization',
+                reactants: ['Enyne allene'],
+                reagents: ['Heat'],
+                products: ['Benzenoid diradical'],
+                mechanism: [
+                    'Enyne allene system',
+                    'Cycloaromatization',
+                    'Diradical formation',
+                    'Anticancer activity',
+                    'DNA damage'
+                ],
+                conditions: {
+                    temperature: '37',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_570',
+                name: 'Schmittel Cyclization',
+                reactants: ['Triyne'],
+                reagents: ['Heat'],
+                products: ['Benzene derivative'],
+                mechanism: [
+                    'Triyne system',
+                    'Cyclization',
+                    'Aromatic product',
+                    'Multiple pathways',
+                    'High temperature'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '65',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_571',
+                name: 'Schreiner Cyclization',
+                reactants: ['Enyne'],
+                reagents: ['Heat'],
+                products: ['Cyclopentene'],
+                mechanism: [
+                    'Enyne metathesis-like',
+                    'Thermal cyclization',
+                    'Cyclopentene formation',
+                    'No catalyst needed',
+                    'High temperature'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Cyclizations',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_572',
+                name: 'Nicholas Reaction',
+                reactants: ['Propargylic alcohol', 'Co2(CO)8'],
+                reagents: [],
+                products: ['Stabilized carbocation'],
+                mechanism: [
+                    'Cobalt complexation',
+                    'Carbocation stabilization',
+                    'Electrophilic reactions',
+                    'Alkyne protection',
+                    'Cobalt carbonyl'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Organometallic Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_573',
+                name: 'Petasis Olefination',
+                reactants: ['Alpha-halo sulfone', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Sulfone anion formation',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Stereoselective',
+                    'Julia-type reaction'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_574',
+                name: 'Julia-Lythgoe Olefination',
+                reactants: ['Beta-keto sulfone', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Sulfone anion',
+                    'Aldol-type addition',
+                    'Elimination',
+                    'E/Z selectivity',
+                    'Stereocontrol'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_575',
+                name: 'Ando Olefination',
+                reactants: ['Epoxide', 'Phosphorus ylide'],
+                reagents: [],
+                products: ['Allyl alcohol'],
+                mechanism: [
+                    'Epoxide opening',
+                    'Ylide addition',
+                    'Wittig-like reaction',
+                    'Allyl alcohol formation',
+                    'Ring opening'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '95',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_576',
+                name: 'Takai Olefination',
+                reactants: ['Aldehyde', 'Geminal dibromide'],
+                reagents: ['CrCl2'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Chromium(II) reduction',
+                    'Geminal dihalide',
+                    'Alkene formation',
+                    'E/Z mixture',
+                    'No phosphorus'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_577',
+                name: 'Fukuyama Olefination',
+                reactants: ['Thioacetal', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Thioacetal anion',
+                    'Addition-elimination',
+                    'Stereoselective',
+                    'Mild conditions',
+                    'Functional group tolerant'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_578',
+                name: 'Still-Wittig Olefination',
+                reactants: ['Phosphine oxide', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Phosphine oxide anion',
+                    'Addition-elimination',
+                    'Z-selective',
+                    'Modified Wittig',
+                    'Stereocontrol'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_579',
+                name: 'Schlosser Olefination',
+                reactants: ['Phosphorus ylide', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Modified Wittig',
+                    'Schlosser conditions',
+                    'E/Z control',
+                    'Stereoselective',
+                    'Base modification'
+                ],
+                conditions: {
+                    temperature: '-100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_580',
+                name: 'Corey-Winter Olefination',
+                reactants: ['1,2-Diol', 'Thiophosgene'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Cyclic thionocarbonate',
+                    'Elimination',
+                    'Alkene formation',
+                    'Syn elimination',
+                    'Stereospecific'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Toluene',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '78',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_581',
+                name: 'Johnson Olefination',
+                reactants: ['Beta-keto sulfoxide', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Sulfoxide anion',
+                    'Addition to aldehyde',
+                    'Syn elimination',
+                    'E/Z control',
+                    'Stereoselective'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_582',
+                name: 'Nysted Reagent',
+                reactants: ['Aldehyde'],
+                reagents: ['Zn', 'CH2Br2'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Geminal dibromide formation',
+                    'Zinc reduction',
+                    'Alkene formation',
+                    'Methylene addition',
+                    'Simmons-Smith variant'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '85',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_583',
+                name: 'Seyferth-Gilbert Homologation',
+                reactants: ['Aldehyde', 'Dimethyl diazomethylphosphonate'],
+                reagents: ['Base'],
+                products: ['Alkyne'],
+                mechanism: [
+                    'Phosphonate anion',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Terminal alkyne',
+                    'One-carbon homologation'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '78',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Homologation',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_584',
+                name: 'Ohira-Bestmann Reaction',
+                reactants: ['Aldehyde', 'Bestmann-Ohira reagent'],
+                reagents: ['Base'],
+                products: ['Alkyne'],
+                mechanism: [
+                    'Diazo phosphonate',
+                    'Base deprotonation',
+                    'Addition-elimination',
+                    'Terminal alkyne',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Methanol',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '75',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Homologation',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_585',
+                name: 'Corey-Fuchs Reaction',
+                reactants: ['Aldehyde', 'CBr4', 'PPh3'],
+                reagents: [],
+                products: ['Dibromoalkene'],
+                mechanism: [
+                    'Phosphorus ylide formation',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Geminal dibromide',
+                    'Alkyne precursor'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '67',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Homologation',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_586',
+                name: 'Shapiro Reaction',
+                reactants: ['Tosylhydrazone', 'Base'],
+                reagents: ['Strong base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Diazene formation',
+                    'Nitrogen elimination',
+                    'Carbanion intermediate',
+                    'Protonation',
+                    'Less substituted alkene'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Ether',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Elimination Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_587',
+                name: 'Bamford-Stevens Reaction',
+                reactants: ['Tosylhydrazone', 'Base'],
+                reagents: ['Collidine'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Carbene or carbanion',
+                    'Depending on conditions',
+                    'Alkene formation',
+                    'Mixture possible',
+                    'Thermal reaction'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Glycol',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Elimination Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_588',
+                name: 'McMurry Coupling',
+                reactants: ['Aldehyde', 'Aldehyde'],
+                reagents: ['TiCl3', 'Zn(Cu)'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Low-valent titanium',
+                    'Pinacol intermediate',
+                    'Deoxygenation',
+                    'Alkene formation',
+                    'Reductive coupling'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '8',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '67',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Carbonyl Coupling',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_589',
+                name: 'Julia Olefination',
+                reactants: ['Sulfone', 'Aldehyde'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Sulfone anion formation',
+                    'Addition to aldehyde',
+                    'Elimination',
+                    'Stereoselective',
+                    'E/Z control'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_590',
+                name: 'Peterson Olefination',
+                reactants: ['Alpha-silyl alcohol', 'Electrophile'],
+                reagents: ['Base'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Beta-elimination',
+                    'Silicon beta-effect',
+                    'Alkene formation',
+                    'Stereoselective',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_591',
+                name: 'Tebbe Olefination',
+                reactants: ['Carbonyl compound'],
+                reagents: ['Cp2TiCH2ClAlMe2'],
+                products: ['Alkene'],
+                mechanism: [
+                    'Titanocene methylidene',
+                    'Wittig-like reaction',
+                    'Methylenation',
+                    'Terminal alkenes',
+                    'Schrock-type'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '89',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_592',
+                name: 'Lombardo Olefination',
+                reactants: ['Aldehyde', 'CHBr3'],
+                reagents: ['CrCl2'],
+                products: ['Dibromoalkene'],
+                mechanism: [
+                    'Chromium(II) reagent',
+                    'Geminal tribromide',
+                    'Dibromoalkene formation',
+                    'Corey-Fuchs variant',
+                    'Alkyne precursor'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '80',
+                    atomEconomy: '75',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Olefination',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_593',
+                name: 'Stork Enamine Reaction',
+                reactants: ['Enamine', 'Electrophile'],
+                reagents: [],
+                products: ['Alkylated carbonyl'],
+                mechanism: [
+                    'Enamine formation',
+                    'Nucleophilic addition',
+                    'Hydrolysis',
+                    'Regioselective alkylation',
+                    'Carbonyl protection'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Enamine Chemistry',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_594',
+                name: 'Mukaiyama Aldol Reaction',
+                reactants: ['Silyl enol ether', 'Aldehyde'],
+                reagents: ['TiCl4'],
+                products: ['Beta-hydroxy carbonyl'],
+                mechanism: [
+                    'Lewis acid activation',
+                    'Mukaiyama reagent',
+                    'Carbonyl addition',
+                    'Stereocontrol possible',
+                    'Mild conditions'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '1',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Aldol Reactions',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_595',
+                name: 'Evans Aldol Reaction',
+                reactants: ['Boron enolate', 'Aldehyde'],
+                reagents: ['Chiral auxiliary'],
+                products: ['Aldol product'],
+                mechanism: [
+                    'Chiral boron reagent',
+                    'Asymmetric induction',
+                    'High diastereoselectivity',
+                    'Auxiliary removal',
+                    'Stereocontrolled synthesis'
+                ],
+                conditions: {
+                    temperature: '-78',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Asymmetric Synthesis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_596',
+                name: 'MacMillan Aldol Reaction',
+                reactants: ['Enal', 'Aldehyde'],
+                reagents: ['Imidazolidinone catalyst'],
+                products: ['Beta-hydroxy aldehyde'],
+                mechanism: [
+                    'Organocatalytic activation',
+                    'Enamine catalysis',
+                    'Asymmetric aldol',
+                    'High enantioselectivity',
+                    'Secondary amine catalyst'
+                ],
+                conditions: {
+                    temperature: '0',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DCM',
+                    time: '12',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_597',
+                name: 'Hajos-Parrish Reaction',
+                reactants: ['Triketone'],
+                reagents: ['Proline'],
+                products: ['Wieland-Miescher ketone'],
+                mechanism: [
+                    'Proline catalysis',
+                    'Intramolecular aldol',
+                    'Enantioselective',
+                    'Robinson annulation',
+                    'Bicyclic product'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '48',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Organocatalysis',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_598',
+                name: 'Cornforth Rearrangement',
+                reactants: ['Allyl alcohol'],
+                reagents: ['Base'],
+                products: ['Rearranged carbonyl'],
+                mechanism: [
+                    'Enolate forms',
+                    'Sigmatropic rearrangement',
+                    'Carbonyl migrates',
+                    'Thermodynamic product',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMSO',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_599',
+                name: 'Smiles Rearrangement',
+                reactants: ['Aryl alkyl ether'],
+                reagents: ['Base'],
+                products: ['Rearranged product'],
+                mechanism: [
+                    'Nucleophilic aromatic substitution',
+                    'Intramolecular attack',
+                    'Rearrangement occurs',
+                    'Ring substitution',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'DMF',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_600',
+                name: 'Truce-Smiles Rearrangement',
+                reactants: ['Aryl sulfide'],
+                reagents: ['Base'],
+                products: ['Rearranged sulfide'],
+                mechanism: [
+                    'Carbanion attacks ring',
+                    'Rearrangement occurs',
+                    'Sulfur migrates',
+                    'New substitution pattern',
+                    'Base-catalyzed'
+                ],
+                conditions: {
+                    temperature: '25',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'THF',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '75',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_601',
+                name: 'Newman-Kwart Rearrangement',
+                reactants: ['O-Aryl thiocarbamate'],
+                reagents: ['Heat'],
+                products: ['S-Aryl thiocarbamate'],
+                mechanism: [
+                    'Thiocarbonyl migrates',
+                    'Rearrangement occurs',
+                    'S-Aryl product forms',
+                    'Thermal reaction',
+                    'High temperature'
+                ],
+                conditions: {
+                    temperature: '250',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_602',
+                name: 'Meisenheimer Rearrangement',
+                reactants: ['Quaternary ammonium salt'],
+                reagents: ['Heat'],
+                products: ['Rearranged amine'],
+                mechanism: [
+                    'Ylide forms',
+                    'Stevens-type rearrangement',
+                    'Alkyl migration',
+                    'Tertiary amine',
+                    'Thermal process'
+                ],
+                conditions: {
+                    temperature: '150',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '3',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_603',
+                name: 'Dienone-Phenol Rearrangement',
+                reactants: ['2,4-Cyclohexadienone'],
+                reagents: ['Acid'],
+                products: ['Phenol'],
+                mechanism: [
+                    'Protonation occurs',
+                    'Rearrangement to phenol',
+                    'Aromatic ring forms',
+                    'Acid-catalyzed',
+                    'Phenolic product'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Acetic acid',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Rearrangements',
+                difficulty: 'Advanced',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_604',
+                name: 'Aromatization Reactions',
+                reactants: ['Cyclic compound'],
+                reagents: ['Oxidant'],
+                products: ['Aromatic compound'],
+                mechanism: [
+                    'Dehydrogenation occurs',
+                    'Double bonds form',
+                    'Aromatic system',
+                    'Oxidative process',
+                    'Stabilization'
+                ],
+                conditions: {
+                    temperature: '200',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'None',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '70',
+                    atomEconomy: '89',
+                    energyEfficiency: 'Medium'
+                },
+                alternatePathways: [],
+                category: 'Aromatization',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_605',
+                name: 'Transesterification',
+                reactants: ['Ester', 'Alcohol'],
+                reagents: ['Acid or Base'],
+                products: ['New ester', 'Alcohol'],
+                mechanism: [
+                    'Nucleophilic attack',
+                    'Tetrahedral intermediate',
+                    'Leaving group departs',
+                    'Equilibrium reaction',
+                    'Catalyst required'
+                ],
+                conditions: {
+                    temperature: '80',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Alcohol',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Ester Chemistry',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_606',
+                name: 'Saponification',
+                reactants: ['Ester', 'Base'],
+                reagents: ['NaOH or KOH'],
+                products: ['Carboxylate', 'Alcohol'],
+                mechanism: [
+                    'Hydroxide attacks carbonyl',
+                    'Tetrahedral intermediate',
+                    'Alkoxide leaves',
+                    'Carboxylate forms',
+                    'Irreversible with base'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '2',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '95',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Hydrolysis',
+                difficulty: 'Beginner',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_607',
+                name: 'Acid-Catalyzed Hydrolysis',
+                reactants: ['Ester', 'Water'],
+                reagents: ['HCl or H2SO4'],
+                products: ['Carboxylic acid', 'Alcohol'],
+                mechanism: [
+                    'Protonation of carbonyl',
+                    'Water attacks',
+                    'Tetrahedral intermediate',
+                    'Protonated alcohol leaves',
+                    'Acid catalyst'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '4',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '90',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Hydrolysis',
+                difficulty: 'Beginner',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            },
+            {
+                id: 'rxn_608',
+                name: 'Amide Hydrolysis',
+                reactants: ['Amide', 'Water'],
+                reagents: ['Acid or Base'],
+                products: ['Carboxylic acid', 'Amine'],
+                mechanism: [
+                    'Nucleophilic attack on carbonyl',
+                    'Tetrahedral intermediate',
+                    'Leaving group departs',
+                    'Carboxylic acid and amine',
+                    'Harsh conditions'
+                ],
+                conditions: {
+                    temperature: '100',
+                    temperatureUnit: '°C',
+                    pressure: '1',
+                    pressureUnit: 'atm',
+                    solvent: 'Water',
+                    time: '6',
+                    timeUnit: 'hours'
+                },
+                metrics: {
+                    yield: '85',
+                    atomEconomy: '100',
+                    energyEfficiency: 'High'
+                },
+                alternatePathways: [],
+                category: 'Hydrolysis',
+                difficulty: 'Intermediate',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
             }
         ];
     }
