@@ -219,6 +219,11 @@ function initPathwayFinder() {
         return button;
     }
 
+    function getAlternatePathways(reactionId) {
+        const reaction = window.reactionDatabase.getReactionById(reactionId);
+        return reaction ? reaction.alternatePathways || [] : [];
+    }
+
     function showReactionDetails(reactionId) {
         const reaction = window.reactionDatabase.getReactionById(reactionId);
         if (!reaction) return;
@@ -230,6 +235,9 @@ function initPathwayFinder() {
     }
 
     function createReactionDetailHTML(reaction) {
+        // Get alternate pathways from database
+        const alternatePathways = getAlternatePathways(reaction.id);
+
         // Format reaction equation
         const reactantsHTML = (reaction.reactants || []).map(r => `<span class="molecule">${r}</span>`).join(' + ');
         const productsHTML = (reaction.products || []).map(p => `<span class="molecule">${p}</span>`).join(' + ');
@@ -308,19 +316,25 @@ function initPathwayFinder() {
             `;
         }
 
-        // Alternate Pathways - Display each pathway exactly as entered
-        if (reaction.alternatePathways && reaction.alternatePathways.length > 0) {
+        // Alternate Pathways from database
+        if (alternatePathways && alternatePathways.length > 0) {
             html += `
                 <div class="detail-section">
                     <h4>Alternate Pathways</h4>
                     <div class="alternate-pathways">
-                        ${reaction.alternatePathways.map((pathway, index) => `
+                        ${alternatePathways.map((pathway, index) => `
                             <div class="pathway-item">
-                                <h5>Pathway ${index + 1}</h5>
-                                ${pathway.method ? `<div class="pathway-method"><strong>Method:</strong> ${pathway.method}</div>` : ''}
-                                ${pathway.reagents ? `<div class="pathway-reagents"><strong>Reagents:</strong> ${pathway.reagents}</div>` : ''}
-                                ${pathway.advantages ? `<div class="pathway-advantages"><strong>Advantages:</strong> ${pathway.advantages}</div>` : ''}
-                                ${pathway.disadvantages ? `<div class="pathway-disadvantages"><strong>Disadvantages:</strong> ${pathway.disadvantages}</div>` : ''}
+                                <h5>${pathway.name || `Pathway ${index + 1}`}</h5>
+                                <div class="pathway-equation">
+                                    <div class="reactants">${(pathway.reactants || []).map(r => `<span class="molecule">${r}</span>`).join(' + ')}</div>
+                                    <div class="arrow">→</div>
+                                    <div class="products">${(pathway.products || []).map(p => `<span class="molecule">${p}</span>`).join(' + ')}</div>
+                                </div>
+                                ${pathway.conditions ? `
+                                <div class="pathway-conditions">
+                                    <small>Conditions: ${Object.values(pathway.conditions).filter(v => v).join(', ')}</small>
+                                </div>
+                                ` : ''}
                             </div>
                         `).join('')}
                     </div>
